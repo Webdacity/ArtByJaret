@@ -1,18 +1,29 @@
 import React from 'react';
-import { graphql, Link } from "gatsby";
 import Img from "gatsby-image"
+import classNames from "classnames";
 
 // Styles
 import styles from "../styles/components/picture-grid.module.scss"
 
 const PictureGrid = (props) => {
 
+    const gridClasses = classNames(
+        styles.pictureGrid,
+        props.reverse ? styles.reverse : ""
+    )
+
+    const colourBlockClasses = classNames(
+        styles.colourBlock,
+        styles[props.colour]
+    )
+
     const imgStyle = {
         objectFit: "contain"
     }
+
     return (
-        <div className={styles.wrapper}>
-            <div className={styles.colourBlock}></div>
+        <div className={gridClasses}>
+            <div className={colourBlockClasses}></div>
             <div className={styles.grid}>
                 <div className={styles.image}>
                     <div className={styles.imageWrapper}>
