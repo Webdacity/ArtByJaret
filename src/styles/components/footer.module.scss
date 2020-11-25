@@ -1,0 +1,67 @@
+@import "../global.scss";
+
+.footer {
+    background-color: $grey;
+    padding: 1rem 4rem 0.5rem 4rem;
+
+    .grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $white;
+
+        .logo {
+            img {
+                height: 3rem;
+            }
+        }
+
+        .links {
+            a {
+                color: white;
+                text-transform: uppercase;
+                margin-right: 1.5rem;
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+                font-weight: 400;
+            }
+        }
+
+        .social {
+            i {
+                font-size: 0.9rem;
+                padding: 0.5rem;
+                color: $white;
+            }
+        }
+    }
+
+    .divider {
+        width: 100%;
+        background-color: $white;
+        height: 0.5px;
+        margin: 0.5rem 0;
+    }
+
+    .copy {
+        text-align: center;
+        margin-top: 1rem;
+
+        p {
+            color: $white;
+            margin: 0;
+            font-weight: 300;
+            font-size: 0.7rem;
+
+            a {
+                color: white;
+                text-decoration: none;
+                font-weight: 400;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

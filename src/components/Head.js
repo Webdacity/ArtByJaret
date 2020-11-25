@@ -30,10 +30,9 @@ const Head = ({ pageMeta }) => {
             <meta property="og:image:alt" content="ArtbyJaret Logo" />
 
             {/* Stylesheets */}
-            <script src="/pace.min.js"></script>
-
         </Helmet >
     )
 }
 
 export default Head
+

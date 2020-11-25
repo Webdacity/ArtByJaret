@@ -6,8 +6,9 @@ import Footer from "../components/Footer";
 
 // Styles & Fonts
 import "typeface-noto-sans-sc";
+import "../styles/typography.scss";
 import "../styles/global.scss";
-// import "../assets/fonts/icons/icons.css";
+import "../assets/fonts/icons/icons.css";
 
 // Icons
 
@@ -20,6 +21,5 @@ const Layout = ({ children, location }) => {
         </>
     )
 }
-
 
 export default Layout

@@ -1,5 +1,3 @@
-@import "./typography.scss";
-
 // Variables
 $grey: #1c1c1c;
 $white: #ffffff;
@@ -7,6 +5,7 @@ $headingfont: Bodoni, Didot, serif;
 $mainfont: "Noto Sans SC", Tahoma, Geneva, sans-serif;
 $faded-pink: #ddcfc6;
 $faded-blue: #e1e4ea;
+$faded-yellow: #ddd6ca;
 
 html,
 body {
@@ -25,12 +24,32 @@ body {
     position: relative;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    min-height: 80vh;
 
     &.noscroll {
         height: 100vh;
         overflow: hidden;
     }
 }
+
+a {
+    text-decoration: none;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $headingfont;
+}
+
+// ScrollBar
 
 ::-webkit-scrollbar {
     width: 6px;
@@ -62,35 +81,36 @@ body {
 
 // Button
 
-// .button {
-//     background-color: transparent;
-//     border: 2px solid $blue;
-//     border-radius: 0.5rem;
-//     padding: 0;
+.button {
+    background-color: $grey;
+    border: none;
+    padding: 0;
+    display: inline-block;
+    margin-top: 1.5rem;
 
-//     &--centered {
-//         display: block;
-//         margin: auto;
-//     }
+    a {
+        display: block;
+        padding: 0.4rem 1.5rem;
+        color: $white;
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
 
-//     a {
-//         display: block;
-//         padding: 0.4rem 1.5rem;
-//         color: $white;
-//         text-decoration: none;
-//         font-family: $headingfont;
-//         font-size: 0.9rem;
-//     }
+    &:hover {
+        background-color: $faded-pink;
+        transition: 0.3s ease;
 
-//     &:hover {
-//         background-color: $blue;
-//         transition: 0.3s ease;
-//     }
+        a {
+            color: $grey;
+        }
+    }
 
-//     &:focus {
-//         outline: none;
-//     }
-// }
+    &:focus {
+        outline: none;
+    }
+}
 
 // Container
 

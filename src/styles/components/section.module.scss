@@ -1,0 +1,37 @@
+@import "../global.scss";
+
+.section {
+    margin: 4rem 0;
+    // overflow: hidden;
+    padding: 0 2rem;
+
+    &.full-width {
+        padding: 0;
+    }
+
+    .heading {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        position: relative;
+
+        img {
+            width: 125%;
+            left: -12.5%;
+            position: absolute;
+            z-index: -1;
+        }
+
+        h2 {
+            font-family: $headingfont;
+            font-size: 4rem;
+            margin: 0;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 1.1rem;
+        }
+    }
+}

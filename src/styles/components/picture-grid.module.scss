@@ -1,0 +1,63 @@
+@import "../global.scss";
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+
+    .colourBlock {
+        background-color: $faded-pink;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 35%;
+        z-index: -1;
+    }
+
+    .grid {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        z-index: 5;
+
+        & > * {
+            width: 50%;
+        }
+
+        .image {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .imageWrapper {
+                width: 55%;
+                padding: 1.5rem;
+                background-color: $white;
+                margin-right: 4rem;
+            }
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-start;
+
+            h1 {
+                font-size: 3rem;
+                font-family: $headingfont;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+                margin: 0.5rem;
+                font-weight: 300;
+
+                span {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

@@ -1,12 +1,9 @@
 import React from 'react'
 
-const Landing = () => {
+export default function cart() {
     return (
         <div>
 
         </div>
     )
 }
-
-export default Landing
-

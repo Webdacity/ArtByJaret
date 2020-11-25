@@ -1,9 +1,34 @@
-import React from 'react'
+import React from 'react';
+import classNames from "classnames";
 
-export default function Section() {
+// Styles, Images, Fonts
+import styles from "../styles/components/section.module.scss"
+import GreenStroke from "../assets/images/sections/green-right.svg";
+import BlueStroke from "../assets/images/sections/blue-left.svg";
+
+const Section = (props) => {
+    let sectionClass = classNames(
+        styles.section,
+        props.fullWidth ? styles.fullWidth : "",
+    );
+
+    const SectionHeading = () => {
+        return (
+            <div className={styles.heading}>
+                <img src={props.stroke === "green" ? GreenStroke : BlueStroke} alt="Faded Brush Stroke" />
+                <h2>{props.heading}</h2>
+                <p>{props.subHeading}</p>
+            </div>
+        )
+    }
+
+
     return (
-        <div>
-
-        </div>
+        <section className={sectionClass}>
+            {props.heading ? <SectionHeading /> : null}
+            {props.children}
+        </section>
     )
 }
+
+export default Section

@@ -5,34 +5,36 @@ import { Link } from "gatsby";
 // Styles, Fonts
 import styles from "../styles/components/header.module.scss"
 
-
-export default function Header() {
+const Header = () => {
     return (
-        <div>
-            <header>
-                <nav className="">
-                    <Link to="/" className="">
-                        ArtByJaret
+        <header>
+            <nav className={styles.navbar}>
+                <Link to="/" className={styles.logo}>
+                    ArtByJaret
                     </Link>
-                    <div className="">
-                        <Link to="/" className="">
-                            Home
+                <div className={styles.links}>
+                    <Link to="/">
+                        Home
                         </Link>
-                        <Link to="/about" className="">
-                            About
+                    <Link to="/about">
+                        About
                         </Link>
-                        <Link to="/collections" className="">
-                            Collections
+                    <Link to="/collections">
+                        Collections
                         </Link>
-                        <Link to="/shop" className="">
-                            Shop
+                    <Link to="/shop">
+                        Shop
                         </Link>
-                        <Link to="/contact" className="">
-                            Contact
+                    <Link to="/contact">
+                        Contact
                         </Link>
-                    </div>
-                </nav>
-            </header>
-        </div>
+                    <Link to="cart">
+                        <i className="icon-shopping-cart"></i>
+                    </Link>
+                </div>
+            </nav>
+        </header>
     )
 }
+
+export default Header

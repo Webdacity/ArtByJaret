@@ -1,0 +1,49 @@
+@import "../global.scss";
+
+.info-block {
+    .grid {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        background-color: $faded-blue;
+        padding: 2.5rem 2rem;
+
+        h4 {
+            font-size: 2rem;
+            margin: 0;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+            font-weight: 300;
+            margin: 0.5rem 0;
+        }
+    }
+
+    &.align-right {
+        .grid {
+            grid-template-columns: 60% 40%;
+        }
+
+        .content {
+            text-align: right;
+            order: 1;
+            padding-right: 2rem;
+        }
+
+        .image {
+            order: 2;
+            position: relative;
+
+            .imageWrapper {
+                width: 60%;
+            }
+        }
+    }
+
+    &.yellow {
+        .grid {
+            background-color: $faded-yellow;
+        }
+    }
+}
