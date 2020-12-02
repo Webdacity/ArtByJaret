@@ -16,6 +16,10 @@ export default function about({ data }) {
         description: "ArtByJaret is a collection of figure and portraits art meticulously created by Jaret Loggenberg.",
         canonical: "/about",
       }}
+      landing={{
+        heading: "About",
+        text: "ArtByJaret is a collection of figure and portraits art meticulously created by Jaret Loggenberg."
+      }}
     >
 
 

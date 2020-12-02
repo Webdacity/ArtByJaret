@@ -1,0 +1,60 @@
+@import "../global.scss";
+
+.contact-details {
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    .contact-grid {
+        display: flex;
+        margin-bottom: 1rem;
+
+        & > div:last-child {
+            margin-left: 2rem;
+        }
+
+        h6 {
+            font-weight: 500;
+            font-family: $mainfont;
+            font-size: 1rem;
+            margin: 0;
+            margin-bottom: 0.25rem;
+        }
+
+        a {
+            font-size: 0.95rem;
+            color: $grey;
+            font-weight: 300;
+        }
+    }
+
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        input {
+            width: 40%;
+            border: none;
+            padding: 0.5rem;
+            outline: none;
+            border-bottom: 1px solid $grey;
+        }
+
+        textarea {
+            width: 100%;
+            border: none;
+            padding: 0.5rem;
+            outline: none;
+            font-family: $mainfont;
+            margin-top: 1rem;
+            border-bottom: 1px solid $grey;
+            height: 5rem;
+            resize: none;
+        }
+
+        button {
+            margin-left: auto;
+        }
+    }
+}

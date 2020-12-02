@@ -1,0 +1,54 @@
+@import "../global.scss";
+
+.slider {
+    .testimonialBlock {
+        h5 {
+            font-family: $mainfont;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin: 0;
+            margin-top: 0.75rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+        }
+    }
+}
+
+.arrows {
+    float: right;
+
+    .arrow {
+        border: 2px solid $grey;
+        background-color: $grey;
+        color: white;
+        padding: 0;
+        transition: 0.4s ease-out;
+        cursor: pointer;
+
+        i {
+            font-size: 1.2rem;
+            vertical-align: middle;
+            font-weight: 300;
+        }
+
+        &:last-child {
+            margin-left: 0.5rem;
+        }
+
+        &:active,
+        &:focus {
+            outline: none;
+            border-radius: none;
+        }
+
+        &:hover {
+            background-color: transparent;
+
+            i {
+                color: $grey;
+            }
+        }
+    }
+}

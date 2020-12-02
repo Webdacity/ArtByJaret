@@ -24,17 +24,24 @@ const InfoBlock = (props) => {
         width: '100%'
     }
 
+    // Set Colour Block Height  
+
     return (
         <div className={blockClass}>
             {/* <img src={Logo} alt="Jaret Logo" className={styles.logo} /> */}
-            <div className={styles.grid}>
-                <div className={styles.image}>
-                    <div className={styles.imageWrapper}>
-                        <Img fluid={props.image} style={wrapperStyles} imgStyle={ImgStyle} />
+            {/* <div className={styles.colourBlock}></div> */}
+            <div className={styles.containerWrapper}>
+                <div className="container">
+                    <div className={styles.grid}>
+                        <div className={styles.image}>
+                            <div className={styles.imageWrapper}>
+                                <Img fluid={props.image} style={wrapperStyles} imgStyle={ImgStyle} />
+                            </div>
+                        </div>
+                        <div className={styles.content} id={`infoBlockContent${props.count}`}>
+                            {props.children}
+                        </div>
                     </div>
-                </div>
-                <div className={styles.content}>
-                    {props.children}
                 </div>
             </div>
         </div>

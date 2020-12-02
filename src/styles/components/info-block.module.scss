@@ -1,48 +1,74 @@
 @import "../global.scss";
 
 .info-block {
-    .grid {
-        display: grid;
-        grid-template-columns: 40% 60%;
+    position: relative;
+    padding: 3rem 0;
+
+    .container-wrapper {
         background-color: $faded-blue;
-        padding: 2.5rem 2rem;
 
-        h4 {
-            font-size: 2rem;
-            margin: 0;
-            margin-bottom: 1rem;
-        }
+        .grid {
+            display: flex;
+            align-items: center;
 
-        p {
-            font-size: 0.95rem;
-            font-weight: 300;
-            margin: 0.5rem 0;
+            .content {
+                width: 65%;
+                padding: 2rem 2rem 2rem 4rem;
+                box-sizing: border-box;
+
+                h4 {
+                    font-size: 2rem;
+                    margin: 0;
+                    margin-bottom: 1rem;
+                }
+
+                p {
+                    font-size: 0.95rem;
+                    font-weight: 300;
+                    margin: 0.5rem 0;
+                }
+            }
+
+            .image {
+                overflow: visible;
+                width: 35%;
+                margin: -5% 0;
+            }
+
+            .image-wrapper {
+                padding-left: 1.5rem;
+                background-color: #ffffff;
+                float: right;
+                width: 75%;
+            }
         }
     }
 
     &.align-right {
-        .grid {
-            grid-template-columns: 60% 40%;
-        }
+        .container-wrapper {
+            .grid {
+                .content {
+                    text-align: right;
+                    order: 1;
+                    padding: 2rem 4rem 2rem 2rem;
+                }
 
-        .content {
-            text-align: right;
-            order: 1;
-            padding-right: 2rem;
-        }
+                .image {
+                    order: 2;
+                    position: relative;
 
-        .image {
-            order: 2;
-            position: relative;
-
-            .imageWrapper {
-                width: 60%;
+                    .image-wrapper {
+                        padding: 0;
+                        padding-right: 1.5rem;
+                        float: left;
+                    }
+                }
             }
         }
     }
 
     &.yellow {
-        .grid {
+        .container-wrapper {
             background-color: $faded-yellow;
         }
     }

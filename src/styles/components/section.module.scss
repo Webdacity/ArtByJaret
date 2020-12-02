@@ -2,8 +2,6 @@
 
 .section {
     margin: 4rem 0;
-    // overflow: hidden;
-    padding: 0 2rem;
 
     &.full-width {
         padding: 0;
@@ -15,6 +13,9 @@
         text-align: center;
         flex-direction: column;
         position: relative;
+        overflow: hidden;
+        margin-bottom: 4rem;
+        padding: 2rem 0;
 
         img {
             width: 125%;
@@ -25,13 +26,15 @@
 
         h2 {
             font-family: $headingfont;
-            font-size: 4rem;
+            font-size: 3rem;
             margin: 0;
         }
 
         p {
             font-weight: 400;
             font-size: 1.1rem;
+            margin: 0;
+            margin-top: 0.5rem;
         }
     }
 }

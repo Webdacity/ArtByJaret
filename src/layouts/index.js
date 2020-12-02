@@ -9,6 +9,7 @@ import "typeface-noto-sans-sc";
 import "../styles/typography.scss";
 import "../styles/global.scss";
 import "../assets/fonts/icons/icons.css";
+import 'material-icons/iconfont/material-icons.scss';
 
 // Icons
 

@@ -16,8 +16,10 @@ const Section = (props) => {
         return (
             <div className={styles.heading}>
                 <img src={props.stroke === "green" ? GreenStroke : BlueStroke} alt="Faded Brush Stroke" />
-                <h2>{props.heading}</h2>
-                <p>{props.subHeading}</p>
+                <div className="container">
+                    <h2>{props.heading}</h2>
+                    <p>{props.subHeading}</p>
+                </div>
             </div>
         )
     }

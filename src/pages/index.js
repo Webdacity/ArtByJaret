@@ -7,6 +7,7 @@ import Layout from "../components/Layout";
 import Section from "../components/Section";
 import PictureGrid from "../components/PictureGrid";
 import InfoBlock from "../components/InfoBlock";
+import TestimonialsSlider from "../components/TestimonialsSlider"
 
 // Styles, Fonts, Images
 import styles from "../styles/pages/index.module.scss";
@@ -26,6 +27,7 @@ export default function Home({ data }) {
         <PictureGrid
           image={data.landingImage.childImageSharp.fluid}
           colour="pink"
+          landing={true}
         >
           <h1> Welcome </h1>
           <p><span>ArtByJaret is a collection of figure and portraits art meticulously created by Jaret Loggenberg.</span></p>
@@ -54,6 +56,7 @@ export default function Home({ data }) {
         <InfoBlock
           image={data.infoBlock1.childImageSharp.fluid}
           alignRight={true}
+          count={1}
         >
 
           <h4>Jaret's Style</h4>
@@ -77,11 +80,12 @@ export default function Home({ data }) {
         fullWidth={true}
       >
         <InfoBlock
-          // image={data.infoBlock1.childImageSharp.fluid}
+          image={data.infoBlock2.childImageSharp.fluid}
           colour="yellow"
         >
 
           <h4>Testimonials</h4>
+          <TestimonialsSlider />
         </InfoBlock>
 
       </Section>
@@ -106,6 +110,20 @@ export const data = graphql`
       }
     }
     infoBlock1: file(relativePath: { eq: "jaret/3.jpg" }) {
+      childImageSharp {
+        fluid  {
+          aspectRatio
+          base64
+          sizes
+          src
+          srcSet
+          srcWebp
+          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    infoBlock2: file(relativePath: { eq: "art/infoBlock2.jpg" }) {
       childImageSharp {
         fluid  {
           aspectRatio
