@@ -1,0 +1,21 @@
+[{
+        "name": "Portraits",
+        "home": true,
+        "thumbnail": "https://res.cloudinary.com/art-by-jaret/image/upload/v1606914365/ArtByJaret/Collections/portraits.jpg"
+    },
+    {
+        "name": "Figures",
+        "home": true,
+        "thumbnail": "https://res.cloudinary.com/art-by-jaret/image/upload/v1606914365/ArtByJaret/Collections/portraits.jpg"
+    },
+    {
+        "name": "Girl on the Beach",
+        "home": true,
+        "thumbnail": "https://res.cloudinary.com/art-by-jaret/image/upload/v1606914365/ArtByJaret/Collections/portraits.jpg"
+    },
+    {
+        "name": "Monochrome",
+        "home": false,
+        "thumbnail": "https://res.cloudinary.com/art-by-jaret/image/upload/v1606914365/ArtByJaret/Collections/portraits.jpg"
+    }
+]

@@ -7,12 +7,14 @@ import Layout from "../components/Layout";
 import Section from "../components/Section";
 import PictureGrid from "../components/PictureGrid";
 import InfoBlock from "../components/InfoBlock";
-import TestimonialsSlider from "../components/TestimonialsSlider"
+import TestimonialsSlider from "../components/TestimonialsSlider";
+import CollectionsMain from "../components/CollectionsMain";
 
 // Styles, Fonts, Images
 import styles from "../styles/pages/index.module.scss";
 
 export default function Home({ data }) {
+
   return (
     <Layout
       pageMeta={{
@@ -25,7 +27,7 @@ export default function Home({ data }) {
       {/* Landing */}
       <div className={styles.landing}>
         <PictureGrid
-          image={data.landingImage.childImageSharp.fluid}
+          gatsbyImage={data.landingImage.childImageSharp.fluid}
           colour="pink"
           landing={true}
         >
@@ -45,7 +47,7 @@ export default function Home({ data }) {
         subHeading="View the collection of Jaret's current &amp; previous work."
         stroke="green"
       >
-
+        <CollectionsMain />
       </Section>
 
 

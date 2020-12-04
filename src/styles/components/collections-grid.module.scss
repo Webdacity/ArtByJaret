@@ -1,0 +1,8 @@
+@import "../global.scss";
+
+.grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+}

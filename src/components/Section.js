@@ -10,6 +10,7 @@ const Section = (props) => {
     let sectionClass = classNames(
         styles.section,
         props.fullWidth ? styles.fullWidth : "",
+        props.marginBottom ? "" : styles.noBottomMargin
     );
 
     const SectionHeading = () => {

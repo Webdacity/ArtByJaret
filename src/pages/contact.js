@@ -25,8 +25,9 @@ export default function contact({ data }) {
       {/* Contact Section */}
       <Section
         fullWidth={true}
+        marginBottom={false}
       >
-        <PictureGrid image={data.contactImage.childImageSharp.fluid}>
+        <PictureGrid gatsbyImage={data.contactImage.childImageSharp.fluid}>
           <div className={styles.contactDetails}>
             <h4>Get in Touch</h4>
             <div className={styles.contactGrid}>

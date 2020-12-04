@@ -4,6 +4,7 @@ import React from 'react';
 import Layout from "../components/Layout";
 import Section from "../components/Section";
 import PictureGrid from "../components/PictureGrid";
+import CollectionsMain from "../components/CollectionsMain";
 
 // Styles, Fonts, Images
 import styles from "../styles/pages/contact.module.scss";
@@ -28,7 +29,7 @@ export default function about({ data }) {
         stroke="blue"
         fullWidth={true}
       >
-        <PictureGrid image={data.firstAboutImage.childImageSharp.fluid}
+        <PictureGrid gatsbyImage={data.firstAboutImage.childImageSharp.fluid}
           colour="pink"
         >
           <p>Born 1994 and growing up on a farm, outside Parys in South Africa, Jaret Loggenberg discovered her passion for art and culture at the age of 10. In 2010 she sold her first painting which enabled her to attend an art tour in Europe. After she matriculated her father advised her to rather study a BCom degree as he felt that she won't make a living from art.</p>
@@ -45,7 +46,7 @@ export default function about({ data }) {
       >
 
         <PictureGrid
-          image={data.secondAboutImage.childImageSharp.fluid}
+          gatsbyImage={data.secondAboutImage.childImageSharp.fluid}
           reverse="true"
           colour="blue"
         >
@@ -57,13 +58,12 @@ export default function about({ data }) {
         </PictureGrid>
       </Section>
 
-      {/* Collections */}
       <Section
         heading="Collections"
         subHeading="View the collection of Jaret's current &amp; previous work."
         stroke="green"
       >
-
+        <CollectionsMain />
       </Section>
 
     </Layout>

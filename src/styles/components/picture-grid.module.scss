@@ -41,6 +41,11 @@
                 padding: 1.5rem;
                 background-color: $white;
                 margin-right: 4rem;
+
+                .collection {
+                    object-fit: contain;
+                    width: 100%;
+                }
             }
         }
 
@@ -93,7 +98,8 @@
         }
     }
 
-    &.landing {
+    &.landing,
+    &.collection {
         min-height: 100vh;
 
         .grid {
