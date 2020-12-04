@@ -29,11 +29,6 @@ const CollectionsMain = () => {
     }, []);
 
 
-    const getLink = (name) => {
-        let link = `/collections#${name.replace(/ /g, "")}`
-        return link
-    }
-
 
     // Rendering
 
@@ -45,7 +40,7 @@ const CollectionsMain = () => {
         <div className="container">
             <div className={styles.grid}>
                 {collections.map(collection => (
-                    collection.home ? <CollectionBlock {...collection} to={getLink(collection.name)} key={collection._id} /> : null
+                    collection.home ? <CollectionBlock {...collection} to="/collections" key={collection._id} /> : null
                 ))}
             </div>
         </div>

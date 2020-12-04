@@ -7,7 +7,7 @@ import Section from "../../components/Section";
 import PictureGrid from "../../components/PictureGrid";
 
 // Styles
-
+import styles from "../../styles/pages/collections-view.module.scss"
 
 const View = ({ location }) => {
     const [isLoading, setLoading] = useState(true);
@@ -56,24 +56,30 @@ const View = ({ location }) => {
                 fullWidth={true}
                 heading={asset.collectionType}
                 stroke="blue"
+                noMarginBottom={true}
             >
                 <PictureGrid collection={true} image={asset.image}>
-                    <h1>{asset.name}</h1>
-                    <p>{asset.description}</p>
-                    <p>{asset.availability ? "Available" : "Sold"}</p>
-                    <div>
-                        <p>
-                            <span>Date</span>
-                            {asset.date}
-                        </p>
-                        <p>
-                            <span>Medium</span>
-                            {asset.medium}
-                        </p>
-                        <p>
-                            <span>Size</span>
-                            {asset.size}
-                        </p>
+                    <div className={styles.grid}>
+                        <h1 className={styles.name}>{asset.name}</h1>
+                        <p className={styles.description}>{asset.description}</p>
+                        <p className={styles.availability}>{asset.availability ? "Available" : "Sold"}</p>
+                        <div className={styles.metaInfo}>
+                            <p>
+                                <span>Date:</span>
+                                {asset.date}
+                            </p>
+                            <p>
+                                <span>Medium:</span>
+                                {asset.medium}
+                            </p>
+                            <p>
+                                <span>Size:</span>
+                                {asset.size}
+                            </p>
+                        </div>
+                        <button className="button">
+                            <a>Enquire</a>
+                        </button>
                     </div>
                 </PictureGrid>
             </Section>

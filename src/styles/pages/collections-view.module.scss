@@ -1,0 +1,24 @@
+@import "../global.scss";
+
+.grid {
+    .availability {
+        font-weight: 500 !important;
+        color: #a3806c;
+        margin-bottom: 1rem;
+    }
+
+    .metaInfo {
+        border-left: 2px solid $grey;
+        padding-left: 1rem;
+        margin: 1rem 0;
+
+        p {
+            font-size: 0.9rem;
+
+            span {
+                display: block;
+                font-weight: 500 !important;
+            }
+        }
+    }
+}

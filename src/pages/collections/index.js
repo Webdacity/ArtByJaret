@@ -73,7 +73,7 @@ const Collections = () => {
                         stroke={index % 2 === 0 ? "green" : "blue"}
                         key={index}
                     >
-                        <CollectionGrid assets={getAssetsForCollection(collection)} />
+                        <CollectionGrid assets={getAssetsForCollection(collection)} id={collection.name} />
                     </Section>
                 ))
             }
