@@ -1,0 +1,52 @@
+@import "../global.scss";
+
+.grid {
+    .price {
+        font-size: 0.9rem !important;
+        padding: 0.25rem 1.5rem;
+        background-color: $grey;
+        color: $white;
+        display: inline-block;
+        font-weight: 400 !important;
+    }
+
+    .metaInfo {
+        border-left: 2px solid $grey;
+        padding-left: 1rem;
+        margin: 1rem 0;
+
+        p {
+            font-size: 0.9rem;
+
+            span {
+                display: block;
+                font-weight: 500 !important;
+            }
+        }
+    }
+
+    .options {
+        display: flex;
+        align-items: flex-end;
+        margin-top: 2rem;
+
+        .quantity {
+            display: flex;
+            flex-direction: column;
+            margin-right: 1rem;
+
+            label {
+                font-size: 0.8rem;
+                margin-bottom: 0.5rem;
+            }
+
+            input {
+                border: 2px solid $grey;
+                padding: calc(0.4rem - 2px) 0.4rem;
+                font-size: 0.8rem;
+                font-weight: 500;
+                width: 2rem;
+            }
+        }
+    }
+}

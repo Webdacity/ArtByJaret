@@ -5,6 +5,8 @@ import axios from "axios";
 import Layout from "../../components/Layout";
 import Section from "../../components/Section";
 import PictureGrid from "../../components/PictureGrid";
+import Loader from "../../components/Loader"
+
 
 // Styles
 import styles from "../../styles/pages/collections-view.module.scss"
@@ -12,7 +14,7 @@ import styles from "../../styles/pages/collections-view.module.scss"
 const View = ({ location }) => {
     const [isLoading, setLoading] = useState(true);
     const [asset, setAsset] = useState();
-
+    let image;
 
     // Get Asset ID or Redirect
     let assetID = location.search;
@@ -31,17 +33,22 @@ const View = ({ location }) => {
             .then(result => {
                 setAsset(result.data);
                 setLoading(false);
+                convertImage()
             })
             .catch(err => {
                 console.log(err)
             })
     }, []);
 
+    // Convert & Optimise Image
+    const convertImage = () => {
+        image = asset.image.replace("upload/v", "upload/w_300/f_auto/v");
+    }
 
     // Rendering
 
     if (isLoading) {
-        return <div className="App">Loading...</div>;
+        return <Loader text="Loading Artwork..." />
     }
 
     return (

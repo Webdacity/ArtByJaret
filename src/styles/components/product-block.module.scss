@@ -1,0 +1,43 @@
+@import "../global.scss";
+
+.product-block {
+    width: 30%;
+
+    .image {
+        width: 80%;
+        display: block;
+        margin: auto;
+
+        img {
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .text {
+        text-align: center;
+        padding-top: 0.75rem;
+        color: $grey;
+
+        .name {
+            font-weight: 500;
+            font-size: 1rem;
+            font-family: $mainfont;
+            margin: 0;
+        }
+
+        .category {
+            font-size: 0.8rem;
+            margin: 0.25rem 0;
+        }
+
+        .price {
+            padding: 0.25rem 1rem;
+            background-color: $grey;
+            font-size: 0.9rem;
+            color: $white;
+            display: inline-block;
+            margin: 0.5rem 0 0 0;
+        }
+    }
+}

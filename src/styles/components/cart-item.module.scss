@@ -1,0 +1,57 @@
+@import "../global.scss";
+
+.item {
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 5px 7px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0px 0px 5px 7px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 0px 5px 7px rgba(0, 0, 0, 0.12);
+    padding: 0.5rem 1rem;
+    display: grid;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+
+    .image {
+        width: 10%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .grid {
+        width: 90%;
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 1rem;
+
+            &.headings {
+                grid-area: 1/2/2/3;
+                font-weight: 500;
+                font-size: 0.9rem;
+            }
+
+            &.values {
+                grid-area: 2/2/3/3;
+                font-weight: 400;
+
+                .total {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    .remove {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        cursor: pointer;
+    }
+}

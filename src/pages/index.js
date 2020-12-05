@@ -9,6 +9,7 @@ import PictureGrid from "../components/PictureGrid";
 import InfoBlock from "../components/InfoBlock";
 import TestimonialsSlider from "../components/TestimonialsSlider";
 import CollectionsMain from "../components/CollectionsMain";
+import ProductsMain from "../components/ProductsMain";
 
 // Styles, Fonts, Images
 import styles from "../styles/pages/index.module.scss";
@@ -74,7 +75,7 @@ export default function Home({ data }) {
         subHeading="Shop Jaret's original artworks, gifts and small-scale artwork."
         stroke="blue"
       >
-
+        <ProductsMain />
       </Section>
 
       {/* Testimonials */}

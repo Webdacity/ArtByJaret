@@ -5,6 +5,8 @@ import axios from "axios";
 import Layout from "../../components/Layout";
 import Section from "../../components/Section";
 import CollectionGrid from "../../components/CollectionsGrid";
+import Loader from "../../components/Loader";
+
 
 // Styles, Fonts, Images
 import styles from "../../styles/pages/collections.module.scss";
@@ -51,8 +53,6 @@ const Collections = () => {
         return assetsForCollection
     }
 
-    // Rendering
-
     return (
         <Layout
             pageMeta={{
@@ -66,7 +66,7 @@ const Collections = () => {
             }}
         >
 
-            {isLoading ? <div className="App">Loading...</div> :
+            {isLoading ? <Loader text="Loading Collections..." /> :
                 collections.map((collection, index) => (
                     <Section
                         heading={collection.name}

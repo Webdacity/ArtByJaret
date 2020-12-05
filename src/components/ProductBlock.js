@@ -4,19 +4,21 @@ import { Link, graphql } from "gatsby";
 
 // Styles, Images
 import styles from "../styles/components/product-block.module.scss"
-import TestArt from "../assets/images/art/test.jpg"
 
-const ProductBlock = () => {
+const ProductBlock = (props) => {
+    let thumbnail = props.thumbnail;
+    thumbnail = thumbnail.replace("upload/v", "upload/w_300/f_auto/v");
     return (
-        <a className={styles.productBlock}>
+        <Link className={styles.productBlock} to={`/shop/view?${props.id}`}>
             <div className={styles.image}>
-                <img src={TestArt} alt="" />
+                <img src={thumbnail} alt={`${props.name} | Art by Jaret`} />
             </div>
-            <div></div>
             <div className={styles.text}>
-                <h5>Portraits</h5>
+                <h4 className={styles.name}>{props.name}</h4>
+                <p className={styles.category}>{props.category}</p>
+                <p className={styles.price}>R {props.price}</p>
             </div>
-        </a>
+        </Link>
     )
 }
 

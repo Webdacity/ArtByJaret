@@ -5,11 +5,14 @@ import { Link } from "gatsby"
 import styles from "../styles/components/collections-block.module.scss"
 
 const CollectionBlock = (props) => {
-    console.log(props)
+
+    // Convert & Optimise Image
+    let thumbnail = props.thumbnail;
+    thumbnail = thumbnail.replace("upload/v", "upload/w_300/f_auto/v");
     return (
         <Link className={styles.block} to={props.to}>
             <div className={styles.imageWrapper}>
-                <img src={props.image} alt={`${props.name} collection of Art by Jaret`} />
+                <img src={thumbnail} alt={`${props.name} collection of Art by Jaret`} />
             </div>
             <h5>{props.name}</h5>
         </Link>
