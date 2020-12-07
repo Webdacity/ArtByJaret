@@ -11,7 +11,7 @@ import Loader from "../../components/Loader";
 // Styles, Fonts, Images
 import styles from "../../styles/pages/collections.module.scss";
 
-const Collections = () => {
+const Collections = ({ data }) => {
 
     const [isLoading, setLoading] = useState(true);
     const [collections, setCollections] = useState();
@@ -20,14 +20,14 @@ const Collections = () => {
     useEffect(() => {
         axios({
             method: "get",
-            url: "http://localhost:3000/collections"
+            url: `${process.env.API_URL}/collections`
         })
             .then(result => {
                 setCollections(result.data);
 
                 axios({
                     method: "get",
-                    url: "http://localhost:3000/assets"
+                    url: `${process.env.API_URL}/assets`
                 })
                     .then(result => {
                         setAssets(result.data);
@@ -62,7 +62,8 @@ const Collections = () => {
             }}
             landing={{
                 heading: "Collections",
-                text: "View the collection of Jaret's current & previous work."
+                text: "View the collection of Jaret's current & previous work.",
+                image: data.landingImage.childImageSharp.fluid
             }}
         >
 
@@ -82,3 +83,23 @@ const Collections = () => {
 }
 
 export default Collections;
+
+
+export const data = graphql`
+  query {
+    landingImage: file(relativePath: { eq: "landing/collections.jpg" }) {
+      childImageSharp {
+        fluid  {
+          aspectRatio
+          base64
+          sizes
+          src
+          srcSet
+          srcWebp
+          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`

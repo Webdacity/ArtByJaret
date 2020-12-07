@@ -18,7 +18,7 @@ const CollectionsMain = () => {
     useEffect(() => {
         axios({
             method: "get",
-            url: "http://localhost:3000/collections"
+            url: `${process.env.API_URL}/collections`
         })
             .then(result => {
                 console.log(result.data)

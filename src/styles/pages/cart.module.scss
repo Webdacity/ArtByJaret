@@ -4,4 +4,25 @@
     .empty-cart {
         text-align: center;
     }
+
+    .headings {
+        display: grid;
+        grid-template-columns: 40% 30% 10% 15% 5%;
+        padding: 0.5rem 1rem;
+
+        p {
+            text-align: center;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        p:first-child {
+            text-align: left;
+        }
+    }
+}
+
+.cart-options {
+    display: flex;
+    justify-content: center;
 }

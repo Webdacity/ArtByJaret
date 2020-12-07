@@ -42,7 +42,7 @@ export default function Footer() {
             <div className={styles.divider}></div>
             <div className={styles.copy}>
                 <p>Copyright © 2020 - Art by Jaret</p>
-                <p>Design &amp; Development by <a href="https://webdacity.dev">Webdacity</a></p>
+                <p>Design &amp; Development by <a target="blank" href="https://webdacity.dev">Webdacity</a></p>
             </div>
         </footer>
     )

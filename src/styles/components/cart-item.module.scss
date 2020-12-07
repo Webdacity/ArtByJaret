@@ -1,57 +1,70 @@
 @import "../global.scss";
 
-.item {
+.grid {
     width: 100%;
-    -webkit-box-shadow: 0px 0px 5px 7px rgba(0, 0, 0, 0.12);
-    -moz-box-shadow: 0px 0px 5px 7px rgba(0, 0, 0, 0.12);
-    box-shadow: 0px 0px 5px 7px rgba(0, 0, 0, 0.12);
-    padding: 0.5rem 1rem;
+    padding: 1rem;
+    border-bottom: 0.5px solid $grey;
     display: grid;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
     margin-bottom: 2rem;
-    position: relative;
+    grid-template-columns: 40% 30% 10% 15% 5%;
+    text-align: center;
 
-    .image {
-        width: 10%;
+    .item {
+        display: flex;
+        align-items: center;
+        text-align: left;
 
-        img {
-            width: 100%;
+        .details {
+            padding-left: 1rem;
+
+            h5 {
+                font-size: 1.1rem;
+                font-family: $mainfont;
+                font-weight: 500;
+                margin: 0;
+                margin-bottom: 0.2rem;
+            }
+
+            p {
+                font-size: 0.8rem;
+                margin: 0;
+                font-weight: 300;
+            }
+        }
+
+        .image {
+            width: 3.5rem;
+            img {
+                width: 100%;
+            }
         }
     }
 
-    .grid {
-        width: 90%;
+    .quantity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        .row {
-            display: flex;
-            justify-content: space-between;
-            padding-left: 1rem;
+        i {
+            font-size: 1rem;
+            padding: 0.25rem;
+            margin: 0 0.25rem;
 
-            &.headings {
-                grid-area: 1/2/2/3;
-                font-weight: 500;
-                font-size: 0.9rem;
-            }
-
-            &.values {
-                grid-area: 2/2/3/3;
-                font-weight: 400;
-
-                .total {
-                    font-weight: 500;
-                }
+            &:hover {
+                cursor: pointer;
             }
         }
     }
 
     .remove {
-        position: absolute;
-        top: 0;
-        right: 0;
         padding: 0.5rem;
         font-size: 0.9rem;
         cursor: pointer;
+        display: block;
+        margin: auto;
+
+        &:hover {
+            font-weight: 500;
+        }
     }
 }

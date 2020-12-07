@@ -18,7 +18,7 @@ const ProductsMain = () => {
     useEffect(() => {
         axios({
             method: "get",
-            url: "http://localhost:3000/products"
+            url: `${process.env.API_URL}/products`
         })
             .then(result => {
                 console.log(result.data)

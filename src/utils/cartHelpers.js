@@ -19,12 +19,6 @@ const showCart = () => {
     console.log(currentCart)
 }
 
-const clearCart = () => {
-    localStorage.removeItem("cart");
-    console.log("Cart Cleared");
-    // updateCartCounter();
-}
-
 const updateCartCounter = () => {
 
 }
@@ -97,10 +91,18 @@ const getCartTotal = () => {
     return total
 }
 
+
+const clearCart = () => {
+    localStorage.removeItem("cart");
+    // updateCartCounter();
+}
+
+
 export {
     updateCart,
     removeFromCart,
     showCart,
     getCart,
-    getCartTotal
+    getCartTotal,
+    clearCart
 }

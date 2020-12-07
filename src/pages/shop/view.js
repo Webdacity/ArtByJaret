@@ -29,7 +29,7 @@ const View = ({ location }) => {
     useEffect(() => {
         axios({
             method: "get",
-            url: `http://localhost:3000/products/${productID}`
+            url: `${process.env.API_URL}/products/${productID}`
         })
             .then(result => {
                 setProduct(result.data);

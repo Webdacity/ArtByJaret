@@ -16,10 +16,6 @@ export default function contact({ data }) {
         description: "Get in touch with Jaret to commission artwork, a creative project, or for any other queries you might have regarding her work.",
         canonical: "/contact",
       }}
-      landing={{
-        heading: "Contact",
-        text: "Get in touch with Jaret to commission artwork, a creative project, or for any other queries you might have regarding her work."
-      }}
     >
 
       {/* Contact Section */}

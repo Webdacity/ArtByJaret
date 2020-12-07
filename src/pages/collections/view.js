@@ -28,7 +28,7 @@ const View = ({ location }) => {
     useEffect(() => {
         axios({
             method: "get",
-            url: `http://localhost:3000/assets/${assetID}`
+            url: `${process.env.API_URL}/assets/${assetID}`
         })
             .then(result => {
                 setAsset(result.data);

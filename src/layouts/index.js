@@ -3,6 +3,8 @@ import React from "react";
 // Components
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Transition from '../components/Transition'
+
 
 // Styles & Fonts
 import "typeface-noto-sans-sc";
@@ -17,7 +19,9 @@ const Layout = ({ children, location }) => {
     return (
         <>
             <Header />
-            {children}
+            <Transition location={location}>
+                {children}
+            </Transition>
             <Footer />
         </>
     )

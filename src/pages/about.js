@@ -19,7 +19,10 @@ export default function about({ data }) {
       }}
       landing={{
         heading: "About",
-        text: "ArtByJaret is a collection of figure and portraits art meticulously created by Jaret Loggenberg."
+        text: "ArtByJaret is a collection of figure and portraits art meticulously created by Jaret Loggenberg.",
+        reverse: true,
+        colour: "blue",
+        image: data.landingImage.childImageSharp.fluid
       }}
     >
 
@@ -47,7 +50,7 @@ export default function about({ data }) {
 
         <PictureGrid
           gatsbyImage={data.secondAboutImage.childImageSharp.fluid}
-          reverse="true"
+          reverse={true}
           colour="blue"
         >
           <p>Born 1994 and growing up on a farm, outside Parys in South Africa, Jaret Loggenberg discovered her passion for art and culture at the age of 10. In 2010 she sold her first painting which enabled her to attend an art tour in Europe. After she matriculated her father advised her to rather study a BCom degree as he felt that she won't make a living from art.</p>
@@ -87,6 +90,20 @@ export const data = graphql`
       }
     }
     secondAboutImage: file(relativePath: { eq: "jaret/2.jpg" }) {
+      childImageSharp {
+        fluid  {
+          aspectRatio
+          base64
+          sizes
+          src
+          srcSet
+          srcWebp
+          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    landingImage: file(relativePath: { eq: "landing/about.jpg" }) {
       childImageSharp {
         fluid  {
           aspectRatio

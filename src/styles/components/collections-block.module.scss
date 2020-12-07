@@ -22,5 +22,27 @@
         letter-spacing: 0.25px;
         font-size: 1rem;
         color: $grey;
+
+        &:after {
+            content: "";
+            display: block;
+            margin: auto;
+            margin-top: 2px;
+            height: 2px;
+            width: 0px;
+            background: transparent;
+            transition: width 0.2s ease-out, background-color 0.3s ease;
+            -webkit-transition: width 0.2s ease-out, background-color 0.3s ease;
+            -moz-transition: width 0.2s ease-out, background-color 0.3s ease;
+            -ms-transition: width 0.2s ease-out, background-color 0.3s ease;
+            -o-transition: width 0.2s ease-out, background-color 0.3s ease;
+        }
+    }
+
+    &:hover {
+        h5:after {
+            width: 100%;
+            background: $grey;
+        }
     }
 }

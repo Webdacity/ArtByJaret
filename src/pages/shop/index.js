@@ -10,7 +10,7 @@ import ProductBlock from "../../components/ProductBlock"
 // Styles, Fonts, Images
 import styles from "../../styles/pages/shop.module.scss";
 
-const Shop = () => {
+const Shop = ({ data }) => {
 
     // State
     const [isLoading, setLoading] = useState(true);
@@ -20,7 +20,7 @@ const Shop = () => {
     useEffect(() => {
         axios({
             method: "get",
-            url: `http://localhost:3000/products`
+            url: `${process.env.API_URL}/products`
         })
             .then(result => {
                 setProducts(result.data);
@@ -45,8 +45,8 @@ const Shop = () => {
                 <div className="container">
                     <ul className={styles.list}>
                         <li className={`${styles.listItem} ${styles.activeListItem}`}>All</li>
-                        {categories.map(category => (
-                            <li className={styles.listItem}>{category}</li>
+                        {categories.map((category, index) => (
+                            <li className={styles.listItem} key={index}>{category}</li>
                         ))}
                     </ul>
                 </div>
@@ -65,7 +65,10 @@ const Shop = () => {
             }}
             landing={{
                 heading: "Shop",
-                text: "Shop Jaret's original artworks, gifts and small-scale artwork."
+                text: "Shop Jaret's original artworks, gifts and small-scale artwork.",
+                reverse: true,
+                colour: "blue",
+                image: data.landingImage.childImageSharp.fluid
             }}
         >
 
@@ -87,4 +90,24 @@ const Shop = () => {
     )
 }
 
-export default Shop
+export default Shop;
+
+
+export const data = graphql`
+  query {
+    landingImage: file(relativePath: { eq: "landing/shop.jpg" }) {
+      childImageSharp {
+        fluid  {
+          aspectRatio
+          base64
+          sizes
+          src
+          srcSet
+          srcWebp
+          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
