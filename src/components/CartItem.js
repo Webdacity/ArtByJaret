@@ -6,12 +6,11 @@ import styles from "../styles/components/cart-item.module.scss"
 
 const CartItem = (props) => {
     const product = props.product;
-
     const [quantity, setQuantity] = useState(props.quantity);
     const [total, setTotal] = useState(product.price * quantity);
 
     const minusQuantity = () => {
-        let currentQuant = parseInt(document.querySelector("#cart-item-quantity").innerHTML);
+        let currentQuant = quantity;
         if (currentQuant !== 1) {
             currentQuant--;
         }
@@ -19,7 +18,7 @@ const CartItem = (props) => {
     }
 
     const plusQuantity = () => {
-        let currentQuant = parseInt(document.querySelector("#cart-item-quantity").innerHTML);
+        let currentQuant = quantity;
         currentQuant++;
         handleQuantityUpdate(currentQuant)
     }

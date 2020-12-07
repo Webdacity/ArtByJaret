@@ -43,7 +43,6 @@ const Cart = () => {
         })
             .then(result => {
                 setShopSettings(result.data);
-                console.log(result.data)
             })
             .catch(err => {
                 console.log(err)
@@ -64,9 +63,9 @@ const Cart = () => {
 
     const handleCheckoutShow = () => {
         // Check Quants
-
         setShowCart(false)
         setShowCheckout(true)
+        handleCartChange();
     }
 
     const handleCartShow = () => {

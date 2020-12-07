@@ -31,7 +31,47 @@ const Shop = ({ data }) => {
             })
     }, []);
 
-    // Inner Components
+    // Helpers
+
+    const handleFilter = (index) => {
+
+        // Active Category
+        let allItems = document.getElementsByClassName(`${styles.listItem}`);
+        for (let i = 0; i < allItems.length; i++) {
+            allItems[i].classList.remove(`${styles.activeListItem}`);
+        }
+        let selectedItem = document.getElementsByClassName(`${styles.listItem}`)[index + 1];
+        selectedItem.classList.add(`${styles.activeListItem}`);
+        let activeCategory = selectedItem.innerHTML;
+
+        // Filter
+        let productGrid = document.querySelector(`.${styles.productGrid}`).children;
+        for (let j = 0; j < productGrid.length; j++) {
+            // Remove Old Filter
+            productGrid[j].classList.remove(`${styles.hideFilter}`)
+            let category = productGrid[j].getAttribute("data-category");
+            if (category !== activeCategory) {
+                productGrid[j].classList.add(`${styles.hideFilter}`)
+            }
+        }
+
+    }
+
+    const handleRemoveFilter = () => {
+        let allItems = document.getElementsByClassName(`${styles.listItem}`);
+        for (let i = 0; i < allItems.length; i++) {
+            allItems[i].classList.remove(`${styles.activeListItem}`);
+        }
+        allItems[0].classList.add(`${styles.activeListItem}`);
+
+        // Remove Filter
+        let productGrid = document.querySelector(`.${styles.productGrid}`).children;
+        for (let j = 0; j < productGrid.length; j++) {
+            productGrid[j].classList.remove(`${styles.hideFilter}`)
+        }
+    }
+
+    // Components
     const ShopCategories = () => {
         let categories = [];
         products.forEach(product => {
@@ -44,9 +84,9 @@ const Shop = ({ data }) => {
             <div className={styles.shopCategories}>
                 <div className="container">
                     <ul className={styles.list}>
-                        <li className={`${styles.listItem} ${styles.activeListItem}`}>All</li>
+                        <li className={`${styles.listItem} ${styles.activeListItem}`} onClick={handleRemoveFilter}>All</li>
                         {categories.map((category, index) => (
-                            <li className={styles.listItem} key={index}>{category}</li>
+                            <li className={styles.listItem} key={index} onClick={() => handleFilter(index)}>{category}</li>
                         ))}
                     </ul>
                 </div>
