@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from "gatsby";
+import { convertImage } from "../utils/helpers"
+
 
 // Styles, Images
 import styles from "../styles/components/product-block.module.scss"
 
 const ProductBlock = (props) => {
-    let thumbnail = props.thumbnail;
-    thumbnail = thumbnail.replace("upload/v", "upload/w_300/f_auto/v");
     return (
         <Link className={styles.productBlock} to={`/shop/view?${props.id}`} data-category={props.category}>
             <div className={styles.image}>
-                <img src={thumbnail} alt={`${props.name} | Art by Jaret`} />
+                <img src={convertImage(props.thumbnail, 300)} alt={`${props.name} | Art by Jaret`} />
             </div>
             <div className={styles.text}>
                 <h4 className={styles.name}>{props.name}</h4>

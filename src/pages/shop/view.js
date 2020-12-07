@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { updateCart } from "../../utils/cartHelpers"
+import { updateCart } from "../../utils/cartHelpers";
+import { convertImage } from "../../utils/helpers"
+
 
 // Components
 import Layout from "../../components/Layout";
@@ -55,43 +57,36 @@ const View = ({ location }) => {
                 canonical: `/collections/view?${productID}`,
             }}
         >
-            <Section
-                fullWidth={true}
-                heading={product.category}
-                stroke="blue"
-                noMarginBottom={true}
-            >
-                <PictureGrid collection={true} image={product.thumbnail}>
-                    <div className={styles.grid}>
-                        <h1 className={styles.name}>{product.name}</h1>
-                        <p className={styles.description}>{product.description}</p>
-                        <p className={styles.price}>R {product.price}</p>
-                        <div className={styles.metaInfo}>
-                            <p>
-                                <span>Date:</span>
-                                {product.date}
-                            </p>
-                            <p>
-                                <span>Medium:</span>
-                                {product.medium}
-                            </p>
-                            <p>
-                                <span>Size:</span>
-                                {product.size}
-                            </p>
-                        </div>
-                        <div className={styles.options}>
-                            <div className={styles.quantity}>
-                                <label htmlFor="quantity">Quantity</label>
-                                <input min={1} type="number" name="quantity" value={quantity} onChange={e => setQuantity(e.target.value)} />
-                            </div>
-                            <button className="button" onClick={() => updateCart(product, quantity)}>
-                                <a>Add To Cart</a>
-                            </button>
-                        </div>
+            <PictureGrid collection={true} image={convertImage(product.thumbnail, 600)} bottomMargin={true}>
+                <div className={styles.grid}>
+                    <h1 className={styles.name}>{product.name}</h1>
+                    <p className={styles.description}>{product.description}</p>
+                    <p className={styles.price}>R {product.price}</p>
+                    <div className={styles.metaInfo}>
+                        <p>
+                            <span>Date:</span>
+                            {product.date}
+                        </p>
+                        <p>
+                            <span>Medium:</span>
+                            {product.medium}
+                        </p>
+                        <p>
+                            <span>Size:</span>
+                            {product.size}
+                        </p>
                     </div>
-                </PictureGrid>
-            </Section>
+                    <div className={styles.options}>
+                        <div className={styles.quantity}>
+                            <label htmlFor="quantity">Quantity</label>
+                            <input min={1} type="number" name="quantity" value={quantity} onChange={e => setQuantity(e.target.value)} />
+                        </div>
+                        <button className="button" onClick={() => updateCart(product, quantity)}>
+                            <a>Add To Cart</a>
+                        </button>
+                    </div>
+                </div>
+            </PictureGrid>
         </Layout>
     )
 }

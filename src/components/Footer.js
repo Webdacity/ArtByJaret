@@ -31,10 +31,10 @@ export default function Footer() {
                 </Link>
                 </div>
                 <div className={styles.social}>
-                    <a href="">
+                    <a href="https://www.instagram.com/artbyjaret/" target="blank">
                         <i className="icon-instagram"></i>
                     </a>
-                    <a href="">
+                    <a href="https://www.facebook.com/ArtbyJaret" target="blank">
                         <i className="icon-facebook"></i>
                     </a>
                 </div>

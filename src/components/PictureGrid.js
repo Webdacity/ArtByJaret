@@ -11,7 +11,8 @@ const PictureGrid = (props) => {
         styles.pictureGrid,
         props.reverse ? styles.reverse : "",
         props.landing ? styles.landing : "",
-        props.collection ? styles.collection : ""
+        props.collection ? styles.collection : "",
+        props.bottomMargin ? styles.bottomMargin : ""
     )
 
     const colourBlockClasses = classNames(
@@ -29,7 +30,7 @@ const PictureGrid = (props) => {
             <div className="container">
                 <div className={styles.grid}>
                     <div className={styles.image}>
-                        <div className={styles.imageWrapper}>
+                        <div className={styles.imageContainer}>
                             {props.gatsbyImage ?
                                 <Img fluid={props.gatsbyImage} style={{ width: "100%" }} imgStyle={imgStyle} />
                                 : <img src={props.image} className={styles.collection} />}

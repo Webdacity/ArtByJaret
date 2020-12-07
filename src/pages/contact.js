@@ -19,39 +19,33 @@ export default function contact({ data }) {
     >
 
       {/* Contact Section */}
-      <Section
-        fullWidth={true}
-        noMarginBottom={true}
-      >
-        <PictureGrid gatsbyImage={data.contactImage.childImageSharp.fluid}>
-          <div className={styles.contactDetails}>
-            <h4>Get in Touch</h4>
-            <div className={styles.contactGrid}>
-              <div>
-                <h6>Email:</h6>
-                <a href="mailto:hello@artbyjaret.co.za">hello@artbyjaret.co.za</a>
-              </div>
-              <div>
-                <h6>Phone:</h6>
-                <a href="tel:+27647581714">+27 64 758 1714</a>
-              </div>
+      <PictureGrid gatsbyImage={data.contactImage.childImageSharp.fluid}>
+        <div className={styles.contactDetails}>
+          <h4>Get in Touch</h4>
+          <div className={styles.contactGrid}>
+            <div>
+              <h6>Email:</h6>
+              <a href="mailto:hello@artbyjaret.co.za">hello@artbyjaret.co.za</a>
             </div>
-            <h4>
-              Send a Message
-          </h4>
-            <form name="contact" method="post" data-netlify="true" className={styles.form}>
-              <input type="hidden" name="form-name" value="contact" />
-              <input type="text" name="name" required placeholder="Name" />
-              <input type="email" name="email" required placeholder="Email" />
-              <textarea name="message" placeholder="Message" required></textarea>
-              <button type="submit" className="button">
-                <a>Send</a>
-              </button>
-            </form>
+            <div>
+              <h6>Phone:</h6>
+              <a href="tel:+27647581714">+27 64 758 1714</a>
+            </div>
           </div>
-        </PictureGrid>
-      </Section>
-
+          <h4>
+            Send a Message
+          </h4>
+          <form name="contact" method="post" data-netlify="true" className={styles.form}>
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="text" name="name" required placeholder="Name" />
+            <input type="email" name="email" required placeholder="Email" />
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit" className="button">
+              <a>Send</a>
+            </button>
+          </form>
+        </div>
+      </PictureGrid>
     </Layout>
   )
 }

@@ -69,13 +69,15 @@ const Collections = ({ data }) => {
 
             {isLoading ? <Loader text="Loading Collections..." /> :
                 collections.map((collection, index) => (
-                    <Section
-                        heading={collection.name}
-                        stroke={index % 2 === 0 ? "green" : "blue"}
-                        key={index}
-                    >
-                        <CollectionGrid assets={getAssetsForCollection(collection)} id={collection.name} />
-                    </Section>
+                    getAssetsForCollection(collection).length > 0 ?
+                        <Section
+                            heading={collection.name}
+                            stroke={index % 2 === 0 ? "green" : "blue"}
+                            key={index}
+                        >
+                            <CollectionGrid assets={getAssetsForCollection(collection)} id={collection.name} />
+                        </Section>
+                        : null
                 ))
             }
         </Layout>

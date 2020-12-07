@@ -18,6 +18,7 @@
             left: -12.5%;
             position: absolute;
             z-index: -1;
+            opacity: 50%;
         }
 
         h2 {
@@ -40,5 +41,14 @@
 
     &.no-bottom-margin {
         margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+        .heading {
+            img {
+                width: 150%;
+                left: -12.5%;
+            }
+        }
     }
 }

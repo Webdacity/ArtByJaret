@@ -2,6 +2,7 @@
 
 .product-block {
     width: 30%;
+    margin-bottom: 2rem;
 
     .image {
         width: 80%;
@@ -50,5 +51,13 @@
                 background-color: transparent;
             }
         }
+    }
+
+    @media (max-width: 768px) {
+        width: 45%;
+    }
+
+    @media (max-width: 576px) {
+        width: 80%;
     }
 }

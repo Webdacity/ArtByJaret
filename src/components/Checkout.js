@@ -55,8 +55,6 @@ const Checkout = ({ products, shopSettings }) => {
         order.cart_items = getCart()
         order.amount_gross = calcTotal()
 
-        console.log(order);
-
         // Send Order
         axios({
             method: "post",
@@ -72,8 +70,6 @@ const Checkout = ({ products, shopSettings }) => {
     }
 
     const initPayment = (order, order_number) => {
-        console.log("going to payfast");
-
         // Set Amount + OrderNumber
         document.querySelector("#checkout-form input[name='amount']").value = order.amount_gross;
         document.querySelector("#checkout-form input[name='custom_str1']").value = order_number;

@@ -57,4 +57,17 @@
             margin-left: auto;
         }
     }
+
+    @media (max-width: 768px) {
+        margin-bottom: 3rem;
+
+        .contact-grid {
+            justify-content: space-around;
+            padding-bottom: 1rem;
+        }
+
+        button {
+            margin-right: auto;
+        }
+    }
 }

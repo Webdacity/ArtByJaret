@@ -21,7 +21,6 @@ const CollectionsMain = () => {
             url: `${process.env.API_URL}/collections`
         })
             .then(result => {
-                console.log(result.data)
                 setCollections(result.data);
                 setLoading(false);
             })

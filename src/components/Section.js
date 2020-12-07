@@ -19,7 +19,7 @@ const Section = (props) => {
                 <img src={props.stroke === "green" ? GreenStroke : BlueStroke} alt="Faded Brush Stroke" />
                 <div className="container">
                     <h2>{props.heading}</h2>
-                    <p>{props.subHeading}</p>
+                    {props.subHeading ? <p>{props.subHeading}</p> : null}
                 </div>
             </div>
         )

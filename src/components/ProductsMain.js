@@ -21,7 +21,6 @@ const ProductsMain = () => {
             url: `${process.env.API_URL}/products`
         })
             .then(result => {
-                console.log(result.data)
                 setProducts(result.data);
                 setLoading(false);
             })
@@ -41,8 +40,8 @@ const ProductsMain = () => {
     return (
         <div className="container">
             <div className={styles.grid}>
-                {products.map(product => (
-                    product.home ? <ProductBlock {...product} /> : null
+                {products.map((product, index) => (
+                    product.home ? <ProductBlock {...product} key={index} /> : null
                 ))}
             </div>
         </div>
