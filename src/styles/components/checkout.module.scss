@@ -49,7 +49,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin: 0.25rem 0;
+            padding: 0.25rem 0;
 
             p {
                 font-weight: 300;
@@ -73,6 +73,37 @@
 
         button {
             float: right;
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+
+        .form,
+        .summary {
+            width: 100%;
+        }
+
+        .form {
+            .row {
+                flex-direction: column;
+                padding: 1rem 0;
+
+                div {
+                    width: 100%;
+                }
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                margin: 0.5rem 0;
+                box-sizing: border-box;
+            }
+        }
+
+        .summary {
+            margin-top: 2rem;
         }
     }
 }

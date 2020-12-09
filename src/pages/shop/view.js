@@ -6,7 +6,6 @@ import { convertImage } from "../../utils/helpers"
 
 // Components
 import Layout from "../../components/Layout";
-import Section from "../../components/Section";
 import PictureGrid from "../../components/PictureGrid";
 import Loader from "../../components/Loader"
 
@@ -25,7 +24,10 @@ const View = ({ location }) => {
     if (location.search) {
         productID = productID.replace("?", '')
     } else {
-        window.location.replace("/collections")
+        if (typeof window !== 'undefined') {
+            window.location.replace("/collections")
+
+        }
     }
 
     useEffect(() => {

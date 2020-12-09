@@ -1,7 +1,7 @@
 // INTERNAL HELPER FUNCTIONS
 
 const searchCart = (productID) => {
-    let currentCart = JSON.parse(localStorage.getItem("cart"));
+    let currentCart = getCart();
     let searchResults = 0;
     if (currentCart !== null) {
         currentCart.forEach(item => {
@@ -14,21 +14,17 @@ const searchCart = (productID) => {
 }
 
 const showCart = () => {
-    let currentCart = JSON.parse(localStorage.getItem("cart"));
+    let currentCart = getCart();
     console.log(`Current Cart:`);
     console.log(currentCart)
 }
-
-const updateCartCounter = () => {
-
-}
-
 
 // CART FUNCTIONS
 
 const updateCart = (product, quantity) => {
     // Get Current Cart
-    let currentCart = JSON.parse(localStorage.getItem("cart"));
+    let currentCart = getCart();
+
     // If already in cart
     if (searchCart(product.id) > 0) {
         //Find index
@@ -61,29 +57,36 @@ const updateCart = (product, quantity) => {
     }
 
     // Save
-    localStorage.setItem("cart", JSON.stringify(currentCart));
+    if (typeof window !== 'undefined') {
+        localStorage.setItem("cart", JSON.stringify(currentCart));
+    }
     showCart()
     // updateCartCounter();
 }
 
 const removeFromCart = (product) => {
     // Get Current Cart & Index of Item
-    let currentCart = JSON.parse(localStorage.getItem("cart"));
+    let currentCart = getCart();
     let index = currentCart.findIndex((item => item.id === product.id));
 
     // Update Cart
     currentCart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(currentCart));
+    if (typeof window !== 'undefined') {
+        localStorage.setItem("cart", JSON.stringify(currentCart));
+    }
     // updateCartCounter();
 }
 
 const getCart = () => {
-    let currentCart = JSON.parse(localStorage.getItem("cart"));
+    let currentCart
+    if (typeof window !== 'undefined') {
+        currentCart = JSON.parse(localStorage.getItem("cart"));
+    }
     return currentCart
 }
 
 const getCartTotal = () => {
-    let currentCart = JSON.parse(localStorage.getItem("cart"));
+    let currentCart = getCart();
     let total = 0;
     currentCart.forEach(item => {
         total += (item.price * item.quantity)
@@ -93,7 +96,9 @@ const getCartTotal = () => {
 
 
 const clearCart = () => {
-    localStorage.removeItem("cart");
+    if (typeof window !== 'undefined') {
+        localStorage.removeItem("cart");
+    }
     // updateCartCounter();
 }
 

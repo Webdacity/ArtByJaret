@@ -20,6 +20,12 @@
             text-align: left;
         }
     }
+
+    @media (max-width: 768px) {
+        .headings {
+            display: none;
+        }
+    }
 }
 
 .cart-options {

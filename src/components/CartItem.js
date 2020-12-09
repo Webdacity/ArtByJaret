@@ -50,8 +50,10 @@ const CartItem = (props) => {
                 <p id="cart-item-quantity">{quantity}</p>
                 <i className="material-icons" onClick={() => plusQuantity()}>add</i>
             </div>
-            <p>R {product.price}</p>
-            <p className={styles.total}>R {total}</p>
+            <p className={styles.price}>R {product.price}</p>
+            <div className={styles.total}>
+                <p>R {total}</p>
+            </div>
             <i className={`${styles.remove} material-icons`} onClick={() => handleItemRemove()}>close</i>
         </div >
     )

@@ -41,5 +41,114 @@
         .active-link {
             font-weight: 500;
         }
+
+        .cart-link {
+            span {
+                display: none;
+            }
+        }
+    }
+}
+
+.mobile-navbar {
+    display: none;
+}
+
+.mobile-navbar {
+    background-color: $grey;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: $white;
+
+    .logo {
+        font-family: $headingfont;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    i {
+        cursor: pointer;
+        padding: 0.5rem;
+        padding-right: 0;
+    }
+
+    .mobile-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        z-index: 1000;
+        background-color: $white;
+        width: 0;
+        transition: 0.4s ease;
+        overflow: hidden;
+        box-sizing: border-box;
+
+        a {
+            color: $grey;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            font-weight: 300;
+            transition: 0.3s ease;
+            margin: 0.2rem 0;
+            padding: 0.25rem;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .active-link {
+            font-weight: 500;
+        }
+
+        .cart-link {
+            span {
+                display: inline-block;
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            color: $grey;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .mobile-navbar {
+        display: flex;
+
+        .mobile-links {
+            &.navbar-open {
+                width: 50vw;
+                border-left: 2px solid $grey;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .mobile-navbar {
+        .mobile-links {
+            &.navbar-open {
+                width: 75vw;
+                border-left: 2px solid $grey;
+            }
+        }
     }
 }

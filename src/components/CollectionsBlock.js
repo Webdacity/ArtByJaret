@@ -10,7 +10,7 @@ const CollectionBlock = (props) => {
     return (
         <Link className={styles.block} to={props.to}>
             <div className={styles.imageWrapper}>
-                <img src={convertImage(props.thumbnail, 300)} alt={`${props.name} collection of Art by Jaret`} />
+                <img src={convertImage(props.image, 300)} alt={`${props.name} collection of Art by Jaret`} />
             </div>
             <h5>{props.name}</h5>
         </Link>
