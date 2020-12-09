@@ -19,7 +19,7 @@ export default function contact({ data }) {
     >
 
       {/* Contact Section */}
-      <PictureGrid gatsbyImage={data.contactImage.childImageSharp.fluid}>
+      <PictureGrid gatsbyImage={data.contactImage.childImageSharp.fluid} fullHeight={true}>
         <div className={styles.contactDetails}>
           <h4>Get in Touch</h4>
           <div className={styles.contactGrid}>
@@ -54,7 +54,7 @@ export const data = graphql`
   query {
     contactImage: file(relativePath: { eq: "jaret/4.jpg" }) {
       childImageSharp {
-        fluid  {
+        fluid(maxWidth: 600, quality: 90)  {
           aspectRatio
           base64
           sizes

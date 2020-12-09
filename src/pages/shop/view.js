@@ -59,7 +59,7 @@ const View = ({ location }) => {
                 canonical: `/collections/view?${productID}`,
             }}
         >
-            <PictureGrid collection={true} image={convertImage(product.thumbnail, 600)} bottomMargin={true}>
+            <PictureGrid collection={true} image={convertImage(product.thumbnail, 600)} bottomMargin={true} fullHeight={true}>
                 <div className={styles.grid}>
                     <h1 className={styles.name}>{product.name}</h1>
                     <p className={styles.description}>{product.description}</p>

@@ -88,7 +88,7 @@ const View = ({ location }) => {
                 canonical: `/collections/view?${assetID}`,
             }}
         >
-            <PictureGrid collection={true} image={convertImage(asset.image, 600)} bottomMargin={true}>
+            <PictureGrid collection={true} image={convertImage(asset.image, 600)} bottomMargin={true} fullHeight={true}>
                 <div className={styles.grid}>
                     <h1 className={styles.name}>{asset.name}</h1>
                     <p className={styles.description}>{asset.description}</p>

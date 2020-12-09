@@ -91,8 +91,8 @@ export const data = graphql`
   query {
     landingImage: file(relativePath: { eq: "landing/collections.jpg" }) {
       childImageSharp {
-        fluid  {
-          aspectRatio
+        fluid(maxWidth: 600, quality: 90)  {
+            aspectRatio
           base64
           sizes
           src

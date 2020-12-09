@@ -12,7 +12,8 @@ const PictureGrid = (props) => {
         props.reverse ? styles.reverse : "",
         props.landing ? styles.landing : "",
         props.collection ? styles.collection : "",
-        props.bottomMargin ? styles.bottomMargin : ""
+        props.bottomMargin ? styles.bottomMargin : "",
+        props.fullHeight ? styles.fullHeight : ""
     )
 
     const colourBlockClasses = classNames(
