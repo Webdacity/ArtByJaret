@@ -1,4 +1,6 @@
 import React from "react";
+import Notification from "../components/Notification"
+
 
 // Components
 import Header from "../components/Header";
@@ -23,6 +25,7 @@ const Layout = ({ children, location }) => {
                 {children}
             </Transition>
             <Footer />
+            <Notification />
         </>
     )
 }

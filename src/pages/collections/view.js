@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { convertImage } from "../../utils/helpers"
+import { convertImage } from "../../utils/helpers";
+import classNames from "classnames";
+
 
 // Components
 import Layout from "../../components/Layout";
@@ -15,7 +17,6 @@ import styles from "../../styles/pages/collections-view.module.scss"
 const View = ({ location }) => {
     const [isLoading, setLoading] = useState(true);
     const [asset, setAsset] = useState();
-    const [showModal, setShowModal] = useState(false);
 
     // Get Asset ID or Redirect
     let assetID = location.search;
@@ -43,19 +44,31 @@ const View = ({ location }) => {
     }, []);
 
     // Helpers
-    const hideModal = () => {
-        setShowModal(false);
+    const showModal = () => {
         let body = document.getElementsByTagName('body')[0];
         body.classList.toggle("noscroll");
+
+        let modal = document.getElementsByClassName(styles.modal)[0];
+        modal.classList.remove(styles.hidden)
+    }
+
+    const hideModal = () => {
+        let body = document.getElementsByTagName('body')[0];
+        body.classList.toggle("noscroll");
+
+        let modal = document.getElementsByClassName(styles.modal)[0];
+        modal.classList.add(styles.hidden)
     }
 
     // Components
     const EnquireModal = () => {
-        let body = document.getElementsByTagName('body')[0];
-        body.classList.toggle("noscroll");
 
+        const modalStyles = classNames(
+            styles.modal,
+            styles.hidden
+        )
         return (
-            <div className={styles.modal}>
+            <div className={modalStyles}>
                 <i className={`${styles.remove} material-icons`} onClick={hideModal}>close</i>
                 <form className={styles.form} name="enquiry" method="post" data-netlify="true" >
                     <input type="hidden" name="form-name" value="enquiry" />
@@ -107,12 +120,12 @@ const View = ({ location }) => {
                             {asset.size}
                         </p>
                     </div>
-                    <button className="button" onClick={() => setShowModal(true)}>
+                    <button className="button" onClick={showModal}>
                         <a>Enquire</a>
                     </button>
                 </div>
             </PictureGrid>
-            {showModal ? <EnquireModal /> : null}
+            <EnquireModal />
         </Layout>
     )
 }

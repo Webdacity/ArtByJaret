@@ -21,6 +21,27 @@
             }
         }
     }
+
+    @media (max-width: 768px) {
+        .metaInfo {
+            border-left: none;
+            padding: 0;
+        }
+
+        .options {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .quantity {
+                margin-right: 0;
+
+                input {
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
 
 .modal {
@@ -84,5 +105,9 @@
         padding: 1rem;
         font-size: 1.1rem;
         cursor: pointer;
+    }
+
+    &.hidden {
+        display: none;
     }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { updateCart } from "../../utils/cartHelpers";
-import { convertImage } from "../../utils/helpers"
+import { convertImage } from "../../utils/helpers";
 
 
 // Components
@@ -59,7 +59,7 @@ const View = ({ location }) => {
                 canonical: `/collections/view?${productID}`,
             }}
         >
-            <PictureGrid collection={true} image={convertImage(product.thumbnail, 600)} bottomMargin={true} fullHeight={true}>
+            <PictureGrid collection={true} images={product.images} bottomMargin={true} fullHeight={true} arrows={true}>
                 <div className={styles.grid}>
                     <h1 className={styles.name}>{product.name}</h1>
                     <p className={styles.description}>{product.description}</p>

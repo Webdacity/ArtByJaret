@@ -116,6 +116,8 @@ const Cart = () => {
             <Section
                 heading={showCheckout ? "Checkout" : "Your Cart"}
                 stroke="green"
+                fullHeight={true}
+
             >
                 <div className="container">
                     {showCart ? <div className={styles.cart}>

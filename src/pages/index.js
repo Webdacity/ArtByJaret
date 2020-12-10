@@ -76,6 +76,13 @@ export default function Home({ data }) {
         stroke="blue"
       >
         <ProductsMain />
+        <div className="container">
+          <div className={styles.viewMore}>
+            <button className="button">
+              <Link to="/shop"> Visit Shop</Link>
+            </button>
+          </div>
+        </div>
       </Section>
 
       {/* Testimonials */}

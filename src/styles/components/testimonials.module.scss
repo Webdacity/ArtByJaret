@@ -51,4 +51,11 @@
             }
         }
     }
+
+    @media (max-width: 768px) {
+        float: unset;
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+    }
 }

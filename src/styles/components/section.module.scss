@@ -39,6 +39,10 @@
         padding: 0;
     }
 
+    &.full-height {
+        min-height: 90vh;
+    }
+
     &.no-bottom-margin {
         margin-bottom: 0;
     }

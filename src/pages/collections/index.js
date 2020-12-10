@@ -19,15 +19,15 @@ const Collections = ({ data }) => {
 
     useEffect(() => {
         axios({
-            method: "get",
-            url: `${process.env.API_URL}/collections`
+            method: "GET",
+            url: `${process.env.API_URL}/collections/`
         })
             .then(result => {
                 setCollections(result.data);
 
                 axios({
-                    method: "get",
-                    url: `${process.env.API_URL}/assets`
+                    method: "GET",
+                    url: `${process.env.API_URL}/assets/`
                 })
                     .then(result => {
                         setAssets(result.data);
@@ -36,17 +36,13 @@ const Collections = ({ data }) => {
                     .catch(err => {
                         console.log(err)
                     })
-
             })
             .catch(err => {
                 console.log(err)
-            })
-    }, []);
+            });
 
-    const getLink = (name) => {
-        let link = `/collections#${name.replace(/ /g, "")}`
-        return link
-    }
+
+    }, []);
 
     const getAssetsForCollection = (collection) => {
         const assetsForCollection = assets.filter(asset => asset.collectionType === collection.name);

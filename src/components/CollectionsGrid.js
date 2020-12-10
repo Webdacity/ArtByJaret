@@ -13,8 +13,8 @@ const CollectionsGrid = (props) => {
     return (
         <div className="container">
             <div className={styles.grid}>
-                {assets.map(asset => (
-                    <CollectionBlock {...asset} to={`/collections/view?${asset._id}`} />
+                {assets.map((asset, index) => (
+                    <CollectionBlock {...asset} to={`/collections/view?${asset._id}`} key={index} />
                 ))}
             </div>
         </div>

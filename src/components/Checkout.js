@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { getCart, getCartTotal } from "../utils/cartHelpers";
+import { sendNotification } from "../components/Notification"
+
 
 
 
@@ -48,12 +50,13 @@ const Checkout = ({ products, shopSettings }) => {
         if (!validateForm()) {
             return
         }
-
+        sendNotification("Your order is being processed. You'll be redirected to Payfast momentarily...")
         let order = {}
         let formData = new FormData(document.querySelector('#checkout-form'));
         formData.forEach((value, key) => order[key] = value);
         order.cart_items = getCart()
-        order.amount_gross = calcTotal()
+        order.amount_gross = calcTotal();
+
 
         // Send Order
         axios({
@@ -127,7 +130,7 @@ const Checkout = ({ products, shopSettings }) => {
                     <input type="hidden" name="merchant_key" value={payfastDetails.merchant_key} />
                     <input type="hidden" name="return_url" value="http://www.artbyjaret.co.za/cart/success" />
                     <input type="hidden" name="cancel_url" value="http://www.artbyjaret.co.za/cart" />
-                    <input type="hidden" name="notify_url" value="" />
+                    <input type="hidden" name="notify_url" value="https://artbyjaret.herokuapp.com/orders/" />
                     <input type="hidden" name="item_name" value="Art by Jaret Cart" />
                     <input type="hidden" name="amount" value="" />
                     <input type="hidden" name="custom_str1" value="" />

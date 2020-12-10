@@ -46,6 +46,27 @@
                     object-fit: contain;
                     width: 100%;
                 }
+
+                &.with-arrows {
+                    padding-bottom: 1rem;
+                }
+            }
+
+            .arrows {
+                margin-top: 0.5rem;
+                display: flex;
+                justify-content: center;
+
+                i {
+                    background-color: $grey;
+                    color: $white;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                }
+
+                i:first-child {
+                    margin-right: 0.5rem;
+                }
             }
         }
 

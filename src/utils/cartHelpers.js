@@ -1,3 +1,6 @@
+import { sendNotification } from "../components/Notification"
+
+
 // INTERNAL HELPER FUNCTIONS
 
 const searchCart = (productID) => {
@@ -32,7 +35,6 @@ const updateCart = (product, quantity) => {
 
         // Update Item
         currentCart[index].quantity = quantity;
-        console.log("Item Quantity Updated")
     }
     // If not in cart
     else {
@@ -52,8 +54,6 @@ const updateCart = (product, quantity) => {
         else {
             currentCart.push(newItem);
         }
-        console.log("Item Added to Cart")
-
     }
 
     // Save
@@ -61,7 +61,8 @@ const updateCart = (product, quantity) => {
         localStorage.setItem("cart", JSON.stringify(currentCart));
     }
     showCart()
-    // updateCartCounter();
+    sendNotification("Item added to your cart")
+
 }
 
 const removeFromCart = (product) => {
@@ -75,6 +76,8 @@ const removeFromCart = (product) => {
         localStorage.setItem("cart", JSON.stringify(currentCart));
     }
     // updateCartCounter();
+    sendNotification("Item removed from cart")
+
 }
 
 const getCart = () => {
@@ -99,7 +102,6 @@ const clearCart = () => {
     if (typeof window !== 'undefined') {
         localStorage.removeItem("cart");
     }
-    // updateCartCounter();
 }
 
 

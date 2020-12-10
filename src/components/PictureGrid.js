@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Img from "gatsby-image"
 import classNames from "classnames";
+import { convertImage } from "../utils/helpers"
 
 // Styles
 import styles from "../styles/components/picture-grid.module.scss"
 
 const PictureGrid = (props) => {
+    const [imageIndex, setImageIndex] = useState(0);
 
+    // Styles
     const gridClasses = classNames(
         styles.pictureGrid,
         props.reverse ? styles.reverse : "",
         props.landing ? styles.landing : "",
         props.collection ? styles.collection : "",
         props.bottomMargin ? styles.bottomMargin : "",
-        props.fullHeight ? styles.fullHeight : ""
+        props.fullHeight ? styles.fullHeight : "",
     )
 
     const colourBlockClasses = classNames(
@@ -25,16 +28,60 @@ const PictureGrid = (props) => {
         objectFit: "contain"
     }
 
+    const imageContainerStyles = classNames(
+        styles.imageContainer,
+        props.arrows ? styles.withArrows : ""
+    )
+
+    // Helpers
+    const prevImage = () => {
+        if (imageIndex > 0) {
+            let newImageIndex = imageIndex - 1
+            setImageIndex(newImageIndex)
+        }
+    }
+
+    const nextImage = () => {
+        if (imageIndex < props.images.length) {
+            let newImageIndex = imageIndex + 1
+            setImageIndex(newImageIndex)
+        }
+    }
+
+
+    // Components
+
+    const Image = () => {
+
+        if (props.gatsbyImage) {
+            return <Img fluid={props.gatsbyImage} style={{ width: "100%" }} imgStyle={imgStyle} />
+        }
+
+        if (props.images) {
+            return <img src={convertImage(props.images[imageIndex], 800)} className={styles.collection} />
+        }
+
+        if (props.image) {
+            return <img src={convertImage(props.image, 800)} className={styles.collection} />
+        }
+    }
+
     return (
         <div className={gridClasses}>
             <div className={colourBlockClasses}></div>
             <div className="container">
                 <div className={styles.grid}>
                     <div className={styles.image}>
-                        <div className={styles.imageContainer}>
-                            {props.gatsbyImage ?
-                                <Img fluid={props.gatsbyImage} style={{ width: "100%" }} imgStyle={imgStyle} />
-                                : <img src={props.image} className={styles.collection} />}
+                        <div className={imageContainerStyles}>
+                            <Image />
+                            {props.arrows && props.images.length > 1 ? <div className={styles.arrows}>
+                                <i className="material-icons" onClick={prevImage}>
+                                    keyboard_arrow_left
+                                </i>
+                                <i className="material-icons" onClick={nextImage}>
+                                    keyboard_arrow_right
+                                </i>
+                            </div> : null}
                         </div>
                     </div>
                     <div className={styles.content}>
