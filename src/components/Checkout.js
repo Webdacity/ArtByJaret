@@ -128,8 +128,8 @@ const Checkout = ({ products, shopSettings }) => {
                     </div>
                     <input type="hidden" name="merchant_id" value={payfastDetails.merchant_id} />
                     <input type="hidden" name="merchant_key" value={payfastDetails.merchant_key} />
-                    <input type="hidden" name="return_url" value="http://www.artbyjaret.co.za/cart/success" />
-                    <input type="hidden" name="cancel_url" value="http://www.artbyjaret.co.za/cart" />
+                    <input type="hidden" name="return_url" value="http://www.artbyjaret.netlify.app/success" />
+                    <input type="hidden" name="cancel_url" value="http://www.artbyjaret.netlify.app/cart" />
                     <input type="hidden" name="notify_url" value="https://artbyjaret.herokuapp.com/orders/" />
                     <input type="hidden" name="item_name" value="Art by Jaret Cart" />
                     <input type="hidden" name="amount" value="" />

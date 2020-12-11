@@ -50,6 +50,13 @@
             border-right: none;
         }
     }
+
+    @media (max-width: 768px) {
+        .list {
+            flex-wrap: wrap;
+            row-gap: 0.5rem;
+        }
+    }
 }
 
 .product-grid {
