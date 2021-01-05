@@ -5,7 +5,9 @@ import axios from "axios";
 import Layout from "../../components/Layout";
 import Loader from "../../components/Loader";
 import Section from "../../components/Section";
-import ProductBlock from "../../components/ProductBlock"
+import ProductBlock from "../../components/ProductBlock";
+import CollectionBlock from "../../components/CollectionsBlock";
+
 
 // Styles, Fonts, Images
 import styles from "../../styles/pages/shop.module.scss";
@@ -15,16 +17,27 @@ const Shop = ({ data }) => {
     // State
     const [isLoading, setLoading] = useState(true);
     const [products, setProducts] = useState();
+    const [assets, setAssets] = useState();
 
     // Hooks
     useEffect(() => {
         axios({
             method: "get",
-            url: `${process.env.API_URL}/products`
+            url: `${process.env.API_URL}/products/`
         })
             .then(result => {
                 setProducts(result.data);
-                setLoading(false);
+                axios({
+                    method: "GET",
+                    url: `${process.env.API_URL}/assets/`
+                })
+                    .then(result => {
+                        setAssets(result.data);
+                        setLoading(false);
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
             })
             .catch(err => {
                 console.log(err)
@@ -93,6 +106,8 @@ const Shop = ({ data }) => {
             </div>
         )
     }
+
+
 
     // Rendering
 

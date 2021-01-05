@@ -75,7 +75,7 @@ export default function Home({ data }) {
         subHeading="Shop Jaret's original artworks, gifts and small-scale artwork."
         stroke="blue"
       >
-        <ProductsMain />
+        <ProductsMain home={true} />
         <div className="container">
           <div className={styles.viewMore}>
             <button className="button">

@@ -25,7 +25,7 @@ const Cart = () => {
     useEffect(() => {
         axios({
             method: "get",
-            url: `${process.env.API_URL}/products`
+            url: `${process.env.API_URL}/products/`
         })
             .then(result => {
                 setProducts(result.data);
@@ -39,7 +39,7 @@ const Cart = () => {
     useEffect(() => {
         axios({
             method: "get",
-            url: `${process.env.API_URL}/shopSettings`
+            url: `${process.env.API_URL}/shopSettings/`
         })
             .then(result => {
                 setShopSettings(result.data);
@@ -99,7 +99,7 @@ const Cart = () => {
                 {
                     cart.map((item, index) => (
                         // Get Product
-                        <CartItem product={getProduct(item)} quantity={item.quantity} key={index} handleCartChange={() => handleCartChange()} />
+                        item ? <CartItem product={getProduct(item)} quantity={item.quantity} key={index} handleCartChange={() => handleCartChange()} /> : null
                     ))
                 }
             </div>

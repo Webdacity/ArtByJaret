@@ -58,7 +58,7 @@ const Collections = ({ data }) => {
             }}
             landing={{
                 heading: "Collections",
-                text: "View the collection of Jaret's current & previous work.",
+                text: "View the collection of Jaret's current & previous work. \n\nJaret has always been in awe about the human body and anatomy and after many hours of research in the library, she discovered her love for human figures. As a figure artist, Jaret's subject matter is woman figures.",
                 image: data.landingImage.childImageSharp.fluid
             }}
         >

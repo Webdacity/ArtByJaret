@@ -4,6 +4,8 @@ import axios from "axios";
 // Components
 import ProductBlock from "./ProductBlock";
 import Loader from "./Loader";
+import CollectionBlock from "./CollectionsBlock";
+
 
 
 // Styles, Images
@@ -11,14 +13,15 @@ import styles from "../styles/components/products-main.module.scss";
 
 // import CollectionsData from "../assets/data/collections.json";
 
-const ProductsMain = () => {
+const ProductsMain = (props) => {
     const [isLoading, setLoading] = useState(true);
     const [products, setProducts] = useState();
+
 
     useEffect(() => {
         axios({
             method: "get",
-            url: `${process.env.API_URL}/products`
+            url: `${process.env.API_URL}/products/`
         })
             .then(result => {
                 setProducts(result.data);
@@ -28,8 +31,6 @@ const ProductsMain = () => {
                 console.log(err)
             })
     }, []);
-
-
 
     // Rendering
 

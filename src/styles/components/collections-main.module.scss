@@ -6,4 +6,8 @@
     justify-content: space-around;
     align-items: center;
     column-gap: 2rem;
+
+    @media (max-width: 768px) {
+        row-gap: 2rem;
+    }
 }

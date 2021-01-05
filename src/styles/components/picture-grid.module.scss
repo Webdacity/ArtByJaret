@@ -37,7 +37,7 @@
             width: 40%;
 
             .image-container {
-                width: 80%;
+                width: 100%;
                 padding: 1.5rem;
                 background-color: $white;
                 box-sizing: border-box;
@@ -88,6 +88,7 @@
                 font-size: 0.95rem;
                 margin: 0.5rem 0;
                 font-weight: 300;
+                white-space: pre-wrap;
 
                 span {
                     font-weight: 400;
@@ -120,6 +121,12 @@
 
     &.landing {
         min-height: 100vh;
+
+        .content {
+            p {
+                font-size: 1.05rem;
+            }
+        }
     }
 
     &.full-height {
@@ -207,6 +214,7 @@
         .colour-block {
             height: 25%;
         }
+
         .grid {
             .image {
                 .image-container {

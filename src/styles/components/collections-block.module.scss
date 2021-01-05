@@ -1,22 +1,29 @@
 @import "../global.scss";
 
 .block {
-    width: 20%;
+    width: 27.5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     .image-wrapper {
+        height: 30vh;
+        width: 100%;
+        overflow: hidden;
+
+
         img {
             width: 100%;
-            display: block;
-            margin: auto;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
         }
     }
 
     h5 {
         text-transform: uppercase;
+        text-align: center;
         font-family: $mainfont;
         font-weight: 500;
         letter-spacing: 0.25px;
@@ -29,8 +36,9 @@
             margin: auto;
             margin-top: 2px;
             height: 2px;
-            width: 0px;
-            background: transparent;
+            width: 0.75rem;
+            background: $grey;
+            // background: transparent;
             transition: width 0.2s ease-out, background-color 0.3s ease;
             -webkit-transition: width 0.2s ease-out, background-color 0.3s ease;
             -moz-transition: width 0.2s ease-out, background-color 0.3s ease;
@@ -46,11 +54,21 @@
         }
     }
 
+    @media (max-width: 1500px) {
+        .image-wrapper {
+            height: 45vh;
+        }
+    }
+
     @media (max-width: 768px) {
         width: 45%;
     }
 
     @media (max-width: 576px) {
         width: 80%;
+
+        .image-wrapper {
+            height: 35vh;
+        }
     }
 }

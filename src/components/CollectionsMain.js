@@ -18,7 +18,7 @@ const CollectionsMain = () => {
     useEffect(() => {
         axios({
             method: "get",
-            url: `${process.env.API_URL}/collections`
+            url: `${process.env.API_URL}/collections/`
         })
             .then(result => {
                 setCollections(result.data);

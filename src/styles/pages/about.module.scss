@@ -1,0 +1,27 @@
+@import "../global.scss";
+
+.exhibitions {
+    p {
+        font-size: 0.95rem;
+        margin: 0.5rem 0;
+
+        span {
+            font-weight: 400;
+        }
+    }
+
+    ul {
+        padding-left: 1rem;
+
+        li {
+            font-size: 0.9rem;
+            margin: 0.25rem 0;
+            font-weight: 300;
+        }
+    }
+
+    a {
+        color: $grey;
+        font-weight: 400;
+    }
+}
