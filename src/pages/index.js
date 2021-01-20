@@ -32,12 +32,14 @@ export default function Home({ data }) {
           colour="pink"
           landing={true}
         >
+          {/* <Fade right duration={2000}> */}
           <h1> Welcome </h1>
           <p><span>ArtByJaret is a collection of figure and portraits art meticulously created by Jaret Loggenberg.</span></p>
           <p>She prefers oil as medium of choice. Jaret's paintings reflect the natural warmth, emotions and inner beauty of a true female. She tries to make her art unique by expressing herself with bold strokes and natural colours.</p>
           <button className="button">
             <Link to="/about">Learn More</Link>
           </button>
+          {/* </Fade> */}
         </PictureGrid>
       </div>
 

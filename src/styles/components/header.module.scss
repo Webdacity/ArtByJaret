@@ -60,6 +60,7 @@
     align-items: center;
     padding: 1rem 2rem;
     color: $white;
+    z-index: 1000;
 
     .logo {
         font-family: $headingfont;

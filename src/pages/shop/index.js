@@ -150,7 +150,7 @@ export default Shop;
 
 export const data = graphql`
   query {
-    landingImage: file(relativePath: { eq: "landing/shop.jpg" }) {
+    landingImage: file(relativePath: { eq: "other/2.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600, quality: 90)  {
             aspectRatio

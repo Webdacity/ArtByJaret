@@ -1,8 +1,7 @@
 @import "../global.scss";
 
 .product-block {
-    width: 25%;
-    margin-bottom: 2rem;
+    width: 22.5%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -38,7 +37,7 @@
         }
 
         .price {
-            padding: 0.25rem 1rem;
+            padding: 0.1rem 1rem;
             background-color: $grey;
             font-size: 0.9rem;
             color: $white;
@@ -62,6 +61,10 @@
         .image {
             height: 40vh;
         }
+    }
+
+    @media (max-width: 991px) {
+        width: 30%;
     }
 
     @media (max-width: 768px) {

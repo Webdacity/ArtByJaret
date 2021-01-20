@@ -125,7 +125,7 @@ export const data = graphql`
         }
       }
     }
-    thirdAboutImage: file(relativePath: { eq: "art/about.jpg" }) {
+    thirdAboutImage: file(relativePath: { eq: "jaret/4.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600, quality: 90)  {
           aspectRatio

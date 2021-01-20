@@ -52,7 +52,7 @@ export default function contact({ data }) {
 
 export const data = graphql`
   query {
-    contactImage: file(relativePath: { eq: "jaret/4.jpg" }) {
+    contactImage: file(relativePath: { eq: "jaret/5.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600, quality: 90)  {
           aspectRatio

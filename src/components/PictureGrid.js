@@ -4,7 +4,11 @@ import classNames from "classnames";
 import { convertImage } from "../utils/helpers"
 
 // Styles
-import styles from "../styles/components/picture-grid.module.scss"
+import styles from "../styles/components/picture-grid.module.scss";
+
+// Animation
+import Fade from 'react-reveal/Fade';
+import { SideBySideMagnifier } from "react-image-magnifiers";
 
 const PictureGrid = (props) => {
     const [imageIndex, setImageIndex] = useState(0);
@@ -57,18 +61,27 @@ const PictureGrid = (props) => {
             return <Img fluid={props.gatsbyImage} style={{ width: "100%" }} imgStyle={imgStyle} />
         }
 
-        if (props.images) {
-            return <img src={convertImage(props.images[imageIndex], 800)} className={styles.collection} />
+        else {
+            return (
+                <>
+                    {/* <img src={convertImage(props.images ? props.images[imageIndex] : props.image, 800)} className={styles.collection} /> */}
+                    <SideBySideMagnifier imageSrc={convertImage(props.images ? props.images[imageIndex] : props.image, 800)} alwaysInPlace={true} />
+                </>
+            )
         }
 
-        if (props.image) {
-            return <img src={convertImage(props.image, 800)} className={styles.collection} />
-        }
+        // <img src={convertImage(props.images[imageIndex], 800)} className={styles.collection} />
     }
+
+
+    // if (props.image) {
+    //     return <img src={convertImage(props.image, 800)} className={styles.collection} />
+    // }
+
 
     return (
         <div className={gridClasses}>
-            <div className={colourBlockClasses}></div>
+            {props.reverse ? <Fade right><div className={colourBlockClasses}></div></Fade> : <Fade left><div className={colourBlockClasses}></div></Fade>}
             <div className="container">
                 <div className={styles.grid}>
                     <div className={styles.image}>
@@ -85,7 +98,7 @@ const PictureGrid = (props) => {
                         </div>
                     </div>
                     <div className={styles.content}>
-                        {props.children}
+                        {props.reverse ? <Fade left> {props.children}</Fade> : <Fade right>{props.children}</Fade>}
                     </div>
                 </div>
             </div>

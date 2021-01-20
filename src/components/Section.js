@@ -3,8 +3,11 @@ import classNames from "classnames";
 
 // Styles, Images, Fonts
 import styles from "../styles/components/section.module.scss"
-import GreenStroke from "../assets/images/sections/green-right.svg";
-import BlueStroke from "../assets/images/sections/blue-left.svg";
+import GreenStroke from "../assets/images/sections/green.svg";
+import BlueStroke from "../assets/images/sections/blue.svg";
+
+// Animation
+import Fade from 'react-reveal/Fade';
 
 const Section = (props) => {
     let sectionClass = classNames(
@@ -17,10 +20,14 @@ const Section = (props) => {
     const SectionHeading = () => {
         return (
             <div className={styles.heading}>
-                <img src={props.stroke === "green" ? GreenStroke : BlueStroke} alt="Faded Brush Stroke" />
+                <div className={styles.imageWrapper}>
+                    <img src={props.stroke === "green" ? GreenStroke : BlueStroke} alt="Faded Brush Stroke" />
+                </div>
                 <div className="container">
-                    <h2>{props.heading}</h2>
-                    {props.subHeading ? <p>{props.subHeading}</p> : null}
+                    <div className={styles.text}>
+                        <h2>{props.heading}</h2>
+                        {props.subHeading ? <p>{props.subHeading}</p> : null}
+                    </div>
                 </div>
             </div>
         )

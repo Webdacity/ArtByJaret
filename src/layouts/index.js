@@ -5,7 +5,8 @@ import Notification from "../components/Notification"
 // Components
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Transition from '../components/Transition'
+import Transition from '../components/Transition';
+import PageLoader from "../components/PageLoader";
 
 
 // Styles & Fonts
@@ -21,6 +22,7 @@ const Layout = ({ children, location }) => {
     return (
         <>
             <Header />
+            <PageLoader />
             <Transition location={location}>
                 {children}
             </Transition>

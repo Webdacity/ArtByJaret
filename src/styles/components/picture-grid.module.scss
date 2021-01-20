@@ -11,7 +11,7 @@
     align-items: center;
 
     .colour-block {
-        background-color: $faded-pink;
+        background-color: $faded-yellow;
         height: 100%;
         position: absolute;
         top: 0;
@@ -160,7 +160,7 @@
 
         .colour-block {
             width: 100%;
-            height: 30%;
+            height: 45%;
         }
 
         .grid {
@@ -171,7 +171,7 @@
                 justify-content: center;
 
                 .image-container {
-                    width: 60%;
+                    width: 75%;
                 }
             }
 
@@ -190,7 +190,7 @@
                     justify-content: center;
 
                     .image-container {
-                        width: 80%;
+                        width: 75%;
                     }
                 }
 
@@ -212,13 +212,13 @@
         padding-top: 6rem;
 
         .colour-block {
-            height: 25%;
+            height: 35%;
         }
 
         .grid {
             .image {
                 .image-container {
-                    width: 80%;
+                    width: 90%;
                 }
             }
         }
