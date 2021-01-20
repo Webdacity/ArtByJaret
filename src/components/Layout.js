@@ -9,7 +9,6 @@ const Layout = (props) => {
     return (
         <>
             <Head pageMeta={props.pageMeta} />
-            {/* <PageLoader /> */}
             {props.landing ? <Landing {...props.landing} /> : null}
             <main className={props.pageName}>
                 {props.children}

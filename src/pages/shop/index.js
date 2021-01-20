@@ -136,6 +136,9 @@ const Shop = ({ data }) => {
                                 {products.map((product, index) => (
                                     product.visibility ? <ProductBlock {...product} key={index} /> : null
                                 ))}
+                                {assets.map((asset, index) => (
+                                    asset.availability ? <ProductBlock {...asset} asset={true} key={index} /> : null
+                                ))}
                             </div>
                         </div>
                     </Section>

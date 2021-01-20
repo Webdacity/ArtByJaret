@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { updateCart } from "../../utils/cartHelpers";
-import { convertImage } from "../../utils/helpers";
 
 
 // Components

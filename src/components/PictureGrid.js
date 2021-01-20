@@ -5,7 +5,6 @@ import { convertImage, hideLoader } from "../utils/helpers";
 
 // Styles
 import styles from "../styles/components/picture-grid.module.scss";
-import LoaderStyles from "../styles/components/page-loader.module.scss";
 
 // Animation
 import Fade from 'react-reveal/Fade';
@@ -59,10 +58,11 @@ const PictureGrid = (props) => {
     const Image = () => {
 
         if (props.gatsbyImage) {
-            return <Img fadeIn={false} onLoad={() => hideLoader()} fluid={props.gatsbyImage} style={{ width: "100%" }} imgStyle={imgStyle} />
+            return <Img durationFadeIn={100} onLoad={() => hideLoader()} fluid={props.gatsbyImage} style={{ width: "100%" }} imgStyle={imgStyle} />
         }
 
         else {
+            hideLoader()
             return (
                 <>
                     <SideBySideMagnifier imageSrc={convertImage(props.images ? props.images[imageIndex] : props.image, 800)} alwaysInPlace={true} />

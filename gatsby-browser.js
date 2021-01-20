@@ -17,5 +17,7 @@ export const onClientEntry = () => {
 
 export const onRouteUpdate = () => {
     let loader = document.getElementById("page-loader");
-    loader.classList.remove(LoaderStyles.hidden)
+    if (loader) {
+        loader.classList.remove(LoaderStyles.hidden)
+    }
 }
