@@ -25,7 +25,7 @@ const Cart = () => {
     useEffect(() => {
         axios({
             method: "get",
-            url: `${process.env.API_URL}/products/`
+            url: `${process.env.GATSBY_API_URL}/products/`
         })
             .then(result => {
                 setProducts(result.data);
@@ -39,7 +39,7 @@ const Cart = () => {
     useEffect(() => {
         axios({
             method: "get",
-            url: `${process.env.API_URL}/shopSettings/`
+            url: `${process.env.GATSBY_API_URL}/shopSettings/`
         })
             .then(result => {
                 setShopSettings(result.data);

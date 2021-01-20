@@ -23,13 +23,13 @@ const Shop = ({ data }) => {
     useEffect(() => {
         axios({
             method: "get",
-            url: `${process.env.API_URL}/products/`
+            url: `${process.env.GATSBY_API_URL}/products/`
         })
             .then(result => {
                 setProducts(result.data);
                 axios({
                     method: "GET",
-                    url: `${process.env.API_URL}/assets/`
+                    url: `${process.env.GATSBY_API_URL}/assets/`
                 })
                     .then(result => {
                         setAssets(result.data);

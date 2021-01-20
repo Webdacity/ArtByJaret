@@ -33,7 +33,7 @@ const View = ({ location }) => {
     useEffect(() => {
         axios({
             method: "get",
-            url: `${process.env.API_URL}/products/${productID}`
+            url: `${process.env.GATSBY_API_URL}/products/${productID}`
         })
             .then(result => {
                 setProduct(result.data);

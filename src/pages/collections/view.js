@@ -32,7 +32,7 @@ const View = ({ location }) => {
     useEffect(() => {
         axios({
             method: "get",
-            url: `${process.env.API_URL}/assets/${assetID}`
+            url: `${process.env.GATSBY_API_URL}/assets/${assetID}`
         })
             .then(result => {
                 setAsset(result.data);

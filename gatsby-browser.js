@@ -13,4 +13,5 @@ export const onInitialClientRender = () => {
 export const onClientEntry = () => {
     let body = document.getElementsByTagName('body')[0];
     body.classList.add("noscroll");
+    console.log(process.env.GATSBY_API_URL)
 }

@@ -20,14 +20,14 @@ const Collections = ({ data }) => {
     useEffect(() => {
         axios({
             method: "GET",
-            url: `${process.env.API_URL}/collections/`
+            url: `${process.env.GATSBY_API_URL}/collections/`
         })
             .then(result => {
                 setCollections(result.data);
 
                 axios({
                     method: "GET",
-                    url: `${process.env.API_URL}/assets/`
+                    url: `${process.env.GATSBY_API_URL}/assets/`
                 })
                     .then(result => {
                         setAssets(result.data);
