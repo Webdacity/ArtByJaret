@@ -1,21 +1,21 @@
 import React from 'react';
 import classNames from "classnames";
 
+
 // Styles, Images, Fonts
 import styles from "../styles/components/section.module.scss"
 import GreenStroke from "../assets/images/sections/green.svg";
 import BlueStroke from "../assets/images/sections/blue.svg";
 
-// Animation
-import Fade from 'react-reveal/Fade';
-
 const Section = (props) => {
+
     let sectionClass = classNames(
         styles.section,
         props.fullWidth ? styles.fullWidth : "",
         props.fullHeight ? styles.fullHeight : "",
         props.noMarginBottom ? styles.noBottomMargin : "",
     );
+
 
     const SectionHeading = () => {
         return (
