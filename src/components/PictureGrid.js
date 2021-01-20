@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Img from "gatsby-image"
 import classNames from "classnames";
-import { convertImage } from "../utils/helpers"
+import { convertImage, hideLoader } from "../utils/helpers";
 
 // Styles
 import styles from "../styles/components/picture-grid.module.scss";
+import LoaderStyles from "../styles/components/page-loader.module.scss";
 
 // Animation
 import Fade from 'react-reveal/Fade';
@@ -58,26 +59,17 @@ const PictureGrid = (props) => {
     const Image = () => {
 
         if (props.gatsbyImage) {
-            return <Img fluid={props.gatsbyImage} style={{ width: "100%" }} imgStyle={imgStyle} />
+            return <Img fadeIn={false} onLoad={() => hideLoader()} fluid={props.gatsbyImage} style={{ width: "100%" }} imgStyle={imgStyle} />
         }
 
         else {
             return (
                 <>
-                    {/* <img src={convertImage(props.images ? props.images[imageIndex] : props.image, 800)} className={styles.collection} /> */}
                     <SideBySideMagnifier imageSrc={convertImage(props.images ? props.images[imageIndex] : props.image, 800)} alwaysInPlace={true} />
                 </>
             )
         }
-
-        // <img src={convertImage(props.images[imageIndex], 800)} className={styles.collection} />
     }
-
-
-    // if (props.image) {
-    //     return <img src={convertImage(props.image, 800)} className={styles.collection} />
-    // }
-
 
     return (
         <div className={gridClasses}>

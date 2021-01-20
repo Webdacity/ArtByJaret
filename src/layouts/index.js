@@ -1,12 +1,12 @@
 import React from "react";
-import Notification from "../components/Notification"
-
 
 // Components
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Transition from '../components/Transition';
+import Notification from "../components/Notification"
 import PageLoader from "../components/PageLoader";
+
 
 
 // Styles & Fonts
@@ -19,15 +19,16 @@ import 'material-icons/iconfont/material-icons.scss';
 // Icons
 
 const Layout = ({ children, location }) => {
+
     return (
         <>
             <Header />
-            <PageLoader />
             <Transition location={location}>
                 {children}
             </Transition>
             <Footer />
             <Notification />
+            <PageLoader />
         </>
     )
 }

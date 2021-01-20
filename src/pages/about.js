@@ -139,7 +139,7 @@ export const data = graphql`
         }
       }
     }
-    landingImage: file(relativePath: { eq: "landing/about.jpg" }) {
+    landingImage: file(relativePath: { eq: "jaret/3.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600, quality: 90)  {
           aspectRatio
