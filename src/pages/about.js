@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import Section from "../components/Section";
 import PictureGrid from "../components/PictureGrid";
 import CollectionsMain from "../components/CollectionsMain";
+import FixedBackground from "../components/FixedBackground";
 
 // Styles, Fonts, Images
 import styles from "../styles/pages/about.module.scss";
@@ -26,7 +27,6 @@ export default function about({ data }) {
       }}
     >
 
-
       <Section
         heading="Jaret Loggenberg"
         stroke="blue"
@@ -44,6 +44,8 @@ export default function about({ data }) {
 
       </Section>
 
+      <FixedBackground image="about1" />
+
       <Section
         fullWidth={true}
       >
@@ -58,6 +60,8 @@ export default function about({ data }) {
           <p>Jaret believes that it doesn't matter what your background is or where you come from, all women over the globe experience the same discrimination, stereotype which all women can relate to. As art is a universal language, with her works she can reach many women around the globe and hopefully inspires them to rise up. “It doesn't matter what has happened to us in the past, we should rise up and take back life. We are not victims, but victors.”</p>
         </PictureGrid>
       </Section>
+
+      <FixedBackground image="about2" />
 
       <Section
         fullWidth={true}
@@ -99,7 +103,7 @@ export const data = graphql`
   query {
     firstAboutImage: file(relativePath: { eq: "jaret/3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 600, quality: 90)  {
+        fluid(maxWidth: 600, quality: 80)  {
           aspectRatio
           base64
           sizes
@@ -113,7 +117,7 @@ export const data = graphql`
     }
     secondAboutImage: file(relativePath: { eq: "jaret/2.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 600, quality: 90)  {
+        fluid(maxWidth: 600, quality: 80)  {
           aspectRatio
           base64
           sizes
@@ -127,7 +131,7 @@ export const data = graphql`
     }
     thirdAboutImage: file(relativePath: { eq: "jaret/4.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 600, quality: 90)  {
+        fluid(maxWidth: 600, quality: 80)  {
           aspectRatio
           base64
           sizes
@@ -141,7 +145,7 @@ export const data = graphql`
     }
     landingImage: file(relativePath: { eq: "jaret/3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 600, quality: 90)  {
+        fluid(maxWidth: 600, quality: 80)  {
           aspectRatio
           base64
           sizes

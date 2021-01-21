@@ -1,8 +1,7 @@
 @import "../global.scss";
 
 .block {
-    width: 27.5%;
-    display: flex;
+    width: 22.5%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -85,8 +84,12 @@
 
     @media (max-width: 1500px) {
         .image-wrapper {
-            height: 45vh;
+            height: 40vh;
         }
+    }
+
+    @media (max-width: 991px) {
+        width: 30%;
     }
 
     @media (max-width: 768px) {

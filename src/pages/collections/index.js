@@ -6,6 +6,8 @@ import Layout from "../../components/Layout";
 import Section from "../../components/Section";
 import CollectionGrid from "../../components/CollectionsGrid";
 import Loader from "../../components/Loader";
+import FixedBackground from "../../components/FixedBackground";
+
 
 
 // Styles, Fonts, Images
@@ -14,28 +16,16 @@ import styles from "../../styles/pages/collections.module.scss";
 const Collections = ({ data }) => {
 
     const [isLoading, setLoading] = useState(true);
-    const [collections, setCollections] = useState();
     const [assets, setAssets] = useState();
 
     useEffect(() => {
         axios({
             method: "GET",
-            url: `${process.env.GATSBY_API_URL}/collections/`
+            url: `${process.env.GATSBY_API_URL}/assets/`
         })
             .then(result => {
-                setCollections(result.data);
-
-                axios({
-                    method: "GET",
-                    url: `${process.env.GATSBY_API_URL}/assets/`
-                })
-                    .then(result => {
-                        setAssets(result.data);
-                        setLoading(false);
-                    })
-                    .catch(err => {
-                        console.log(err)
-                    })
+                setAssets(result.data);
+                setLoading(false);
             })
             .catch(err => {
                 console.log(err)
@@ -63,18 +53,12 @@ const Collections = ({ data }) => {
             }}
         >
 
+            <FixedBackground image="collections" />
+
             {isLoading ? <Loader text="Loading Collections..." /> :
-                collections.map((collection, index) => (
-                    getAssetsForCollection(collection).length > 0 ?
-                        <Section
-                            heading={collection.name}
-                            stroke={index % 2 === 0 ? "green" : "blue"}
-                            key={index}
-                        >
-                            <CollectionGrid assets={getAssetsForCollection(collection)} id={collection.name} />
-                        </Section>
-                        : null
-                ))
+                <Section >
+                    <CollectionGrid assets={assets} />
+                </Section>
             }
         </Layout>
     )

@@ -7,8 +7,6 @@ import Transition from '../components/Transition';
 import Notification from "../components/Notification"
 import PageLoader from "../components/PageLoader";
 
-
-
 // Styles & Fonts
 import "typeface-noto-sans-sc";
 import "../styles/typography.scss";
@@ -19,7 +17,7 @@ import 'material-icons/iconfont/material-icons.scss';
 // Icons
 
 const Layout = ({ children, location }) => {
-    const nonLoaderPages = ["/404", "/cart", "/cart/success"]
+    const nonLoaderPages = ["/404", "/cart", "/cart/success", "/test"]
 
     return (
         <>
