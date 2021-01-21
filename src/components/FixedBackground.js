@@ -38,7 +38,21 @@ const FixedBackground = (props) => {
                   }
                 }
               }
-            collections: file(relativePath: { eq: "backgrounds/collections.jpg" }) {
+            collections: file(relativePath: { eq: "backgrounds/collections2.jpg" }) {
+                childImageSharp {
+                  fluid(maxWidth: 1920, quality: 80)  {
+                    aspectRatio
+                    base64
+                    sizes
+                    src
+                    srcSet
+                    srcWebp
+                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            shop: file(relativePath: { eq: "backgrounds/shop.jpg" }) {
                 childImageSharp {
                   fluid(maxWidth: 1920, quality: 80)  {
                     aspectRatio

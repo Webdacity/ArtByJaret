@@ -7,6 +7,8 @@ import Loader from "../../components/Loader";
 import Section from "../../components/Section";
 import ProductBlock from "../../components/ProductBlock";
 import CollectionBlock from "../../components/CollectionsBlock";
+import FixedBackground from "../../components/FixedBackground";
+
 
 
 // Styles, Fonts, Images
@@ -126,6 +128,7 @@ const Shop = ({ data }) => {
                 image: data.landingImage.childImageSharp.fluid
             }}
         >
+            <FixedBackground image="shop" />
 
             {isLoading ? <Loader text="Loading Items..." /> :
                 <>

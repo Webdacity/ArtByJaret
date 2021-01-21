@@ -101,7 +101,7 @@ export default function about({ data }) {
 
 export const data = graphql`
   query {
-    firstAboutImage: file(relativePath: { eq: "jaret/3.jpg" }) {
+    firstAboutImage: file(relativePath: { eq: "jaret/6.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600, quality: 80)  {
           aspectRatio
@@ -115,7 +115,7 @@ export const data = graphql`
         }
       }
     }
-    secondAboutImage: file(relativePath: { eq: "jaret/2.jpg" }) {
+    secondAboutImage: file(relativePath: { eq: "jaret/4.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600, quality: 80)  {
           aspectRatio
@@ -129,7 +129,7 @@ export const data = graphql`
         }
       }
     }
-    thirdAboutImage: file(relativePath: { eq: "jaret/4.jpg" }) {
+    thirdAboutImage: file(relativePath: { eq: "jaret/2.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600, quality: 80)  {
           aspectRatio
