@@ -26,7 +26,7 @@ const FixedBackground = (props) => {
               }
             about2: file(relativePath: { eq: "backgrounds/about2.jpg" }) {
                 childImageSharp {
-                  fluid(maxWidth: 1920, quality: 80)  {
+                  fluid(maxWidth: 1920)  {
                     aspectRatio
                     base64
                     sizes
@@ -40,7 +40,7 @@ const FixedBackground = (props) => {
               }
             collections: file(relativePath: { eq: "backgrounds/collections2.jpg" }) {
                 childImageSharp {
-                  fluid(maxWidth: 1920, quality: 80)  {
+                  fluid(maxWidth: 1920)  {
                     aspectRatio
                     base64
                     sizes
@@ -54,7 +54,7 @@ const FixedBackground = (props) => {
               }
             shop: file(relativePath: { eq: "backgrounds/shop.jpg" }) {
                 childImageSharp {
-                  fluid(maxWidth: 1920, quality: 80)  {
+                  fluid(maxWidth: 1920)  {
                     aspectRatio
                     base64
                     sizes
@@ -78,6 +78,7 @@ const FixedBackground = (props) => {
       className={styles.background}
       fluid={image}
       loading="eager"
+      backgroundColour="#ffffff"
     >
     </BackgroundImage>
   )
