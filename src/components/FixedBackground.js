@@ -77,6 +77,7 @@ const FixedBackground = (props) => {
     <BackgroundImage
       className={styles.background}
       fluid={image}
+      loading="eager"
     >
     </BackgroundImage>
   )

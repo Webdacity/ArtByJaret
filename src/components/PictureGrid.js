@@ -61,7 +61,7 @@ const PictureGrid = (props) => {
     const Image = () => {
 
         if (props.gatsbyImage) {
-            return <Img durationFadeIn={100} onLoad={() => hideLoader()} fluid={props.gatsbyImage} style={{ width: "100%" }} imgStyle={imgStyle} />
+            return <Img loading={props.landing ? "eager" : "lazy"} durationFadeIn={100} onLoad={() => hideLoader()} fluid={props.gatsbyImage} style={{ width: "100%" }} imgStyle={imgStyle} />
         }
 
         else {
