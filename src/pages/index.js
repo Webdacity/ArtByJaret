@@ -108,7 +108,7 @@ export const data = graphql`
   query {
     landingImage: file(relativePath: { eq: "jaret/1.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 600, quality: 80)  {
+        fluid(maxWidth: 600)  {
           aspectRatio
           base64
           sizes
@@ -122,7 +122,7 @@ export const data = graphql`
     }
     infoBlock1: file(relativePath: { eq: "jaret/3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 600, quality: 80)  {
+        fluid(maxWidth: 6000)  {
           aspectRatio
           base64
           sizes
@@ -136,7 +136,7 @@ export const data = graphql`
     }
     infoBlock2: file(relativePath: { eq: "art/infoBlock2.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 600, quality: 80)  {
+        fluid(maxWidth: 600)  {
           aspectRatio
           base64
           sizes

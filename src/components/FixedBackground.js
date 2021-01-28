@@ -12,7 +12,7 @@ const FixedBackground = (props) => {
         query {
             about1: file(relativePath: { eq: "backgrounds/about1.jpg" }) {
                 childImageSharp {
-                  fluid(maxWidth: 1920, quality: 80)  {
+                  fluid(maxWidth: 1920)  {
                     aspectRatio
                     base64
                     sizes
