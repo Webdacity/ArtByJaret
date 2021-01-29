@@ -15,10 +15,10 @@ const CollectionBlock = (props) => {
     const getAvailability = () => {
 
         if (props.availability) {
-            return <p>Available</p>
+            return <p className={styles.availability}>Available</p>
         }
         else if (!props.availability && props.description) {
-            return <p>Sold</p>
+            return <p className={styles.availability}>Sold</p>
         }
         else {
             return null
@@ -33,6 +33,7 @@ const CollectionBlock = (props) => {
                 </div>
                 <div className={styles.text}>
                     <h5>{props.name}</h5>
+                    <p className={styles.collection}>{props.collectionType}</p>
                     {getAvailability()}
                 </div>
             </Fade>

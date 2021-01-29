@@ -7,8 +7,9 @@ import Section from "../components/Section";
 import PictureGrid from "../components/PictureGrid";
 import InfoBlock from "../components/InfoBlock";
 import TestimonialsSlider from "../components/TestimonialsSlider";
-import CollectionsMain from "../components/CollectionsMain";
 import ProductsMain from "../components/ProductsMain";
+import CollectionGrid from "../components/CollectionsGrid";
+
 
 // Styles, Fonts, Images
 import styles from "../styles/pages/index.module.scss";
@@ -46,10 +47,10 @@ export default function Home({ data }) {
       {/* Collections */}
       <Section
         heading="Collections"
-        subHeading="View the collection of Jaret's current &amp; previous work."
+        subHeading="A collection of Jaret's current &amp; previous work."
         stroke="green"
       >
-        <CollectionsMain />
+        <CollectionGrid home={true} />
       </Section>
 
 

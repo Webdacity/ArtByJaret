@@ -128,7 +128,7 @@ const Shop = ({ data }) => {
                 image: data.landingImage.childImageSharp.fluid
             }}
         >
-            <FixedBackground image="shop" />
+            <FixedBackground image="shop1" />
 
             {isLoading ? <Loader text="Loading Items..." /> :
                 <>

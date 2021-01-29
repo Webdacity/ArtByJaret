@@ -4,8 +4,9 @@ import React from 'react';
 import Layout from "../components/Layout";
 import Section from "../components/Section";
 import PictureGrid from "../components/PictureGrid";
-import CollectionsMain from "../components/CollectionsMain";
 import FixedBackground from "../components/FixedBackground";
+import CollectionGrid from "../components/CollectionsGrid";
+
 
 // Styles, Fonts, Images
 import styles from "../styles/pages/about.module.scss";
@@ -92,7 +93,7 @@ export default function about({ data }) {
         subHeading="View the collection of Jaret's current &amp; previous work."
         stroke="green"
       >
-        <CollectionsMain />
+        <CollectionGrid home={true} />
       </Section>
 
     </Layout>
