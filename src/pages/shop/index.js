@@ -88,10 +88,10 @@ const Shop = ({ data }) => {
 
     // Components
     const ShopCategories = () => {
-        let categories = [];
+        let categories = ["Original Art Work"];
         products.forEach(product => {
             if (!categories.includes(product.category)) {
-                categories.push(product.category)
+                categories.unshift(product.category)
             }
         })
 
