@@ -71,7 +71,7 @@ const View = ({ location }) => {
             <div className={modalStyles}>
                 <i className={`${styles.remove} material-icons`} onClick={hideModal}>close</i>
                 <form className={styles.form} name="enquiry" method="post" data-netlify="true" >
-                    <input type="hidden" name="form-name" value="enquiry" />
+                    <input type="hidden" name="enquiry" value="enquiry" />
                     <h1>Enquiry Form</h1>
                     <h3>{asset.name}</h3>
                     <input type="hidden" name="asset" value={asset.name} />
