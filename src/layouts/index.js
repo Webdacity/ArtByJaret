@@ -17,7 +17,7 @@ import 'material-icons/iconfont/material-icons.scss';
 // Icons
 
 const Layout = ({ children, location }) => {
-    const nonLoaderPages = ["/404", "/cart", "/cart/success", "/test"]
+    const nonLoaderPages = ["/404", "/cart/", "/cart/success"]
 
     return (
         <>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { getCart } from "../../utils/cartHelpers";
+import { getCart, checkCartValidity } from "../../utils/cartHelpers";
 
 
 // Components
@@ -28,6 +28,7 @@ const Cart = () => {
             url: `${process.env.GATSBY_API_URL}/products/`
         })
             .then(result => {
+                checkCartValidity(result.data)
                 console.log(result)
                 setProducts(result.data);
                 setLoading(false);

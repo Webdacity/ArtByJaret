@@ -3,7 +3,7 @@ import { sendNotification } from "../components/Notification"
 
 // INTERNAL HELPER FUNCTIONS
 
-const searchCart = (productID) => {
+export const searchCart = (productID) => {
     let currentCart = getCart();
     let searchResults = 0;
     if (currentCart !== null) {
@@ -16,7 +16,7 @@ const searchCart = (productID) => {
     return searchResults
 }
 
-const showCart = () => {
+export const showCart = () => {
     let currentCart = getCart();
     console.log(`Current Cart:`);
     console.log(currentCart)
@@ -24,7 +24,7 @@ const showCart = () => {
 
 // CART FUNCTIONS
 
-const updateCart = (product, quantity) => {
+export const updateCart = (product, quantity) => {
     // Get Current Cart
     let currentCart = getCart();
 
@@ -65,7 +65,7 @@ const updateCart = (product, quantity) => {
 
 }
 
-const removeFromCart = (product) => {
+export const removeFromCart = (product) => {
     // Get Current Cart & Index of Item
     let currentCart = getCart();
     let index = currentCart.findIndex((item => item.id === product.id));
@@ -80,7 +80,7 @@ const removeFromCart = (product) => {
 
 }
 
-const getCart = () => {
+export const getCart = () => {
     let currentCart
     if (typeof window !== 'undefined') {
         currentCart = JSON.parse(localStorage.getItem("cart"));
@@ -88,7 +88,7 @@ const getCart = () => {
     return currentCart
 }
 
-const getCartTotal = () => {
+export const getCartTotal = () => {
     let currentCart = getCart();
     let total = 0;
     currentCart.forEach(item => {
@@ -98,18 +98,21 @@ const getCartTotal = () => {
 }
 
 
-const clearCart = () => {
+export const clearCart = () => {
     if (typeof window !== 'undefined') {
         localStorage.removeItem("cart");
     }
 }
 
+export const checkCartValidity = (products) => {
+    let currentCart = getCart();
 
-export {
-    updateCart,
-    removeFromCart,
-    showCart,
-    getCart,
-    getCartTotal,
-    clearCart
+    if (currentCart) {
+        currentCart.forEach(item => {
+            let itemFound = products.find(product => product.id === item.id)
+            if (!itemFound) {
+                removeFromCart(item)
+            }
+        })
+    }
 }
