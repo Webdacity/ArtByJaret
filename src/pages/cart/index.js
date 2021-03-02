@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { getCart, checkCartValidity } from "../../utils/cartHelpers";
+import { hideLoader } from "../../utils/helpers";
 
 
 // Components
@@ -29,7 +30,7 @@ const Cart = () => {
         })
             .then(result => {
                 checkCartValidity(result.data)
-                console.log(result)
+                hideLoader();
                 setProducts(result.data);
                 setLoading(false);
             })
