@@ -7,7 +7,7 @@ import { getCart, checkCartValidity } from "../../utils/cartHelpers";
 import Layout from "../../components/Layout";
 import Section from "../../components/Section";
 import CartItem from "../../components/CartItem";
-import Pageloader from "../../components/Pageloader";
+import PageLoader from "../../components/PageLoader";
 import Checkout from "../../components/Checkout";
 
 import styles from "../../styles/pages/cart.module.scss"
