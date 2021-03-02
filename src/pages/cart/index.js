@@ -124,7 +124,7 @@ const Cart = () => {
                 <div className="container">
                     {showCart ? <div className={styles.cart}>
                         {isLoading ?
-                            <Pageloader />
+                            <PageLoader />
                             : <CartGrid />
                         }
                     </div> : null}
