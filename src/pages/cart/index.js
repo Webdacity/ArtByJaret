@@ -58,6 +58,9 @@ const Cart = () => {
     }
 
     const emptyCart = () => {
+        if (!cart) {
+            return true
+        }
         if (cart === null || cart.length < 1) {
             return true
         }
