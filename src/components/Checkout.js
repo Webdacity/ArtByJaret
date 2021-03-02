@@ -3,25 +3,16 @@ import axios from "axios";
 import { getCart, getCartTotal } from "../utils/cartHelpers";
 import { sendNotification } from "../components/Notification"
 
-
-
-
 // Styles, Images, Data
 import styles from "../styles/components/checkout.module.scss"
 
-const Checkout = ({ products, shopSettings }) => {
+const Checkout = ({ shopSettings }) => {
     const [order, setOrder] = useState();
 
     const payfastDetails = {
         merchant_id: "10016549",
         merchant_key: "sxou1f0t4mr2c",
         url: `https://sandbox.payfast.co.za/eng/process`
-    }
-
-    // Helpers
-    const getProduct = (item) => {
-        let product = products.find(product => product.id === item.id);
-        return product
     }
 
     const calcTotal = () => {
@@ -76,20 +67,7 @@ const Checkout = ({ products, shopSettings }) => {
         // Set Amount + OrderNumber
         document.querySelector("#checkout-form input[name='amount']").value = order.amount_gross;
         document.querySelector("#checkout-form input[name='custom_str1']").value = order_number;
-        document.querySelector("#checkout-form input[name='notify_url']").value = "https://artbyjaret.herokuapp.com/orders/";
         document.querySelector("#checkout-form").submit()
-    }
-
-    // Components
-    const CartItem = (cartItem) => {
-        let product = getProduct(cartItem);
-        return (
-            <div className={styles.cartItem}>
-                <p>{product.name}</p>
-                <p>{cartItem.price}</p>
-                <p>{cartItem.quantity}</p>
-            </div>
-        )
     }
 
     return (

@@ -88,7 +88,7 @@ export default function Home({ data }) {
       </Section>
 
       {/* Testimonials */}
-      <Section
+      {/* <Section
         fullWidth={true}
       >
         <InfoBlock
@@ -100,7 +100,7 @@ export default function Home({ data }) {
           <TestimonialsSlider />
         </InfoBlock>
 
-      </Section>
+      </Section> */}
     </Layout >
   )
 }

@@ -4,7 +4,7 @@
     height: 100%;
     width: 100%;
     position: relative;
-    padding: 4rem 0;
+    padding: 3rem 0;
     display: flex;
     align-items: center;
 
@@ -132,6 +132,18 @@
         min-height: 90vh;
     }
 
+    &.collection {
+        .grid {
+            .image {
+                width: 50%;
+            }
+
+            .content {
+                width: 50%;
+            }
+        }
+    }
+
     // Media Queries
 
     @media (max-width: 991px) {
@@ -182,6 +194,20 @@
                 padding-top: 2rem;
             }
         }
+
+        &.collection {
+            .grid {
+                .image {
+                    width: 100%;
+                }
+
+                .content {
+                    width: 100%;
+                }
+            }
+        }
+
+
 
         &.reverse {
             .grid {

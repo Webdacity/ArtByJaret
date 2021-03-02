@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { convertImage } from "../../utils/helpers";
 import classNames from "classnames";
+import { sendNotification } from "../../components/Notification"
+
 
 
 // Components
@@ -66,12 +68,43 @@ const View = ({ location }) => {
         const modalStyles = classNames(
             styles.modal,
             styles.hidden
-        )
+        );
+
+        const submitEnquireForm = (e) => {
+            e.preventDefault();
+            let data = {}
+            let form = document.getElementById("enquiry-form");
+            const formData = new FormData(form);
+            formData.forEach((value, key) => data[key] = value);
+            console.log(data)
+
+            axios({
+                method: "POST",
+                url: `${process.env.GATSBY_API_URL}/enquiry`,
+                data: data
+            })
+                .then(result => {
+                    if (result.status === 200) {
+                        form.reset();
+                        hideModal()
+                        sendNotification("Thank you for your message. I'll get back to you soon!")
+                    } else {
+                        hideModal()
+                        sendNotification("There seems to be a problem sending your message. Please send your enquiry via email.")
+                    }
+                })
+                .catch(error => {
+                    hideModal()
+                    console.log(error)
+                    sendNotification("There seems to be a problem sending your message. Please send your enquiry via email.")
+
+                })
+        }
+
         return (
             <div className={modalStyles}>
                 <i className={`${styles.remove} material-icons`} onClick={hideModal}>close</i>
-                <form className={styles.form} name="enquiry" method="post" data-netlify="true" >
-                    <input type="hidden" name="enquiry" value="enquiry" />
+                <form className={styles.form} id="enquiry-form" name="enquiry" onSubmit={submitEnquireForm}>
                     <h1>Enquiry Form</h1>
                     <h3>{asset.name}</h3>
                     <input type="hidden" name="asset" value={asset.name} />

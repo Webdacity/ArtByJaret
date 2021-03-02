@@ -140,7 +140,7 @@ const Shop = ({ data }) => {
                                     product.visibility ? <ProductBlock {...product} key={index} /> : null
                                 ))}
                                 {assets.map((asset, index) => (
-                                    asset.availability ? <ProductBlock {...asset} asset={true} key={index} /> : null
+                                    <ProductBlock {...asset} asset={true} key={index} />
                                 ))}
                             </div>
                         </div>

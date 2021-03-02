@@ -10,6 +10,21 @@
         height: 30vh;
         width: 100%;
         overflow: hidden;
+        position: relative;
+
+        p {
+            position: absolute;
+            padding: 0.25rem 0.5rem;
+            background-color: $grey;
+            color: $white;
+            margin: 0;
+            top: 0.5rem;
+            right: 0.5rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.25px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
 
         img {
             width: 100%;

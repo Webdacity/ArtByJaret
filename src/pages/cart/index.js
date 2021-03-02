@@ -28,6 +28,7 @@ const Cart = () => {
             url: `${process.env.GATSBY_API_URL}/products/`
         })
             .then(result => {
+                console.log(result)
                 setProducts(result.data);
                 setLoading(false);
             })

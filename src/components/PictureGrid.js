@@ -3,8 +3,6 @@ import Img from "gatsby-image"
 import classNames from "classnames";
 import { convertImage, hideLoader } from "../utils/helpers";
 
-// Components
-import BrushAnimation from "./BrushAnimation"
 
 // Styles
 import styles from "../styles/components/picture-grid.module.scss";
@@ -97,7 +95,6 @@ const PictureGrid = (props) => {
                     </div>
                 </div>
             </div>
-            {/* {props.landing ? <BrushAnimation reverse={props.reverse} /> : null} */}
         </div>
     )
 }

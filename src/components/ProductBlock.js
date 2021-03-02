@@ -12,6 +12,7 @@ const ProductBlock = (props) => {
         return (
             <Link className={styles.productBlock} to={`/collections/view?${props.id}`} data-category="Original Art Work">
                 <div className={styles.image}>
+                    {props.availability ? null : <p>Sold</p>}
                     <img src={convertImage(props.image, 300)} alt={`${props.name} | Art by Jaret`} />
                 </div>
                 <div className={styles.text}>
