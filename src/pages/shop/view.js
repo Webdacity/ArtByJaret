@@ -6,7 +6,7 @@ import { updateCart } from "../../utils/cartHelpers";
 // Components
 import Layout from "../../components/Layout";
 import PictureGrid from "../../components/PictureGrid";
-import Loader from "../../components/Loader"
+import PageLoader from "../../components/PageLoader"
 
 
 // Styles
@@ -47,7 +47,7 @@ const View = ({ location }) => {
     // Rendering
 
     if (isLoading) {
-        return <Loader text="Loading Artwork..." />
+        return <PageLoader />
     }
 
     return (

@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { getCart, checkCartValidity } from "../../utils/cartHelpers";
-import { hideLoader } from "../../utils/helpers";
 
 
 // Components
 import Layout from "../../components/Layout";
 import Section from "../../components/Section";
 import CartItem from "../../components/CartItem";
-import Loader from "../../components/Loader";
+import Pageloader from "../../components/Pageloader";
 import Checkout from "../../components/Checkout";
 
 import styles from "../../styles/pages/cart.module.scss"
@@ -30,7 +29,6 @@ const Cart = () => {
         })
             .then(result => {
                 checkCartValidity(result.data)
-                hideLoader();
                 setProducts(result.data);
                 setLoading(false);
             })
@@ -59,6 +57,13 @@ const Cart = () => {
         return product
     }
 
+    const emptyCart = () => {
+        if (cart === null || cart.length < 1) {
+            return true
+        }
+        return false
+    }
+
     // Handlers
     const handleCartChange = (() => {
         setCart(getCart())
@@ -78,13 +83,7 @@ const Cart = () => {
 
     // Components
     const CartGrid = () => {
-        if (cart === null) {
-            return (
-                <div className={styles.emptyCart}>
-                    <h2>Your cart is empty </h2>
-                </div>
-            )
-        } else if (cart.length < 1) {
+        if (emptyCart()) {
             return (
                 <div className={styles.emptyCart}>
                     <h2>Your cart is empty </h2>
@@ -125,13 +124,13 @@ const Cart = () => {
                 <div className="container">
                     {showCart ? <div className={styles.cart}>
                         {isLoading ?
-                            <Loader text="Loading Cart..." />
+                            <Pageloader />
                             : <CartGrid />
                         }
                     </div> : null}
                     {showCheckout ? <Checkout products={products} shopSettings={shopSettings} /> : null}
                     <div className={styles.cartOptions}>
-                        {showCart && cart ?
+                        {showCart && (!emptyCart()) ?
                             <button className="button" onClick={() => handleCheckoutShow()}>
                                 <a>Continue to Checkout</a>
                             </ button>

@@ -5,7 +5,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Transition from '../components/Transition';
 import Notification from "../components/Notification"
-import PageLoader from "../components/PageLoader";
 
 // Styles & Fonts
 import "typeface-noto-sans-sc";
@@ -17,7 +16,6 @@ import 'material-icons/iconfont/material-icons.scss';
 // Icons
 
 const Layout = ({ children, location }) => {
-    const nonLoaderPages = ["/404", "/cart/", "/cart/success"]
 
     return (
         <>
@@ -27,7 +25,6 @@ const Layout = ({ children, location }) => {
             </Transition>
             <Footer />
             <Notification />
-            {nonLoaderPages.includes(location.pathname) ? null : <PageLoader />}
         </>
     )
 }

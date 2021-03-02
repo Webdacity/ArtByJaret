@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Img from "gatsby-image"
 import classNames from "classnames";
-import { convertImage, hideLoader } from "../utils/helpers";
+import { convertImage } from "../utils/helpers";
 
+// Components
+import PageLoader from "./PageLoader";
 
 // Styles
 import styles from "../styles/components/picture-grid.module.scss";
@@ -13,6 +15,7 @@ import { SideBySideMagnifier } from "react-image-magnifiers";
 
 const PictureGrid = (props) => {
     const [imageIndex, setImageIndex] = useState(0);
+    const [loading, setLoading] = useState(true)
 
     // Styles
     const gridClasses = classNames(
@@ -59,11 +62,11 @@ const PictureGrid = (props) => {
     const Image = () => {
 
         if (props.gatsbyImage) {
-            return <Img loading="eager" durationFadeIn={100} onLoad={() => hideLoader()} fluid={props.gatsbyImage} style={{ width: "100%" }} imgStyle={imgStyle} />
+            return <Img loading="eager" durationFadeIn={100} onLoad={() => setLoading(false)} fluid={props.gatsbyImage} style={{ width: "100%" }} imgStyle={imgStyle} />
         }
 
         else {
-            hideLoader()
+            setLoading(false)
             return (
                 <>
                     <SideBySideMagnifier imageSrc={convertImage(props.images ? props.images[imageIndex] : props.image, 800)} alwaysInPlace={true} />
@@ -73,29 +76,32 @@ const PictureGrid = (props) => {
     }
 
     return (
-        <div className={gridClasses}>
-            {props.reverse ? <Fade right><div className={colourBlockClasses}></div></Fade> : <Fade left><div className={colourBlockClasses}></div></Fade>}
-            <div className="container">
-                <div className={styles.grid}>
-                    <div className={styles.image}>
-                        <div className={imageContainerStyles}>
-                            <Image />
-                            {props.arrows && props.images.length > 1 ? <div className={styles.arrows}>
-                                <i className="material-icons" onClick={prevImage}>
-                                    keyboard_arrow_left
+        <>
+            <div className={gridClasses}>
+                {props.reverse ? <Fade right><div className={colourBlockClasses}></div></Fade> : <Fade left><div className={colourBlockClasses}></div></Fade>}
+                <div className="container">
+                    <div className={styles.grid}>
+                        <div className={styles.image}>
+                            <div className={imageContainerStyles}>
+                                <Image />
+                                {props.arrows && props.images.length > 1 ? <div className={styles.arrows}>
+                                    <i className="material-icons" onClick={prevImage}>
+                                        keyboard_arrow_left
                                 </i>
-                                <i className="material-icons" onClick={nextImage}>
-                                    keyboard_arrow_right
+                                    <i className="material-icons" onClick={nextImage}>
+                                        keyboard_arrow_right
                                 </i>
-                            </div> : null}
+                                </div> : null}
+                            </div>
                         </div>
-                    </div>
-                    <div className={styles.content}>
-                        {props.reverse ? <Fade left> {props.children}</Fade> : <Fade right>{props.children}</Fade>}
+                        <div className={styles.content}>
+                            {props.reverse ? <Fade left> {props.children}</Fade> : <Fade right>{props.children}</Fade>}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            { loading ? <PageLoader /> : null}
+        </>
     )
 }
 

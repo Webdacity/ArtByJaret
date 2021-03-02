@@ -14,10 +14,3 @@ export const onClientEntry = () => {
     let body = document.getElementsByTagName('body')[0];
     body.classList.add("noscroll");
 }
-
-export const onRouteUpdate = () => {
-    let loader = document.getElementById("page-loader");
-    if (loader) {
-        loader.classList.remove(LoaderStyles.hidden)
-    }
-}

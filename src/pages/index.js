@@ -23,6 +23,7 @@ export default function Home({ data }) {
         description: "ArtByJaret is a collection of figure and portraits art meticulously created by Jaret Loggenberg.",
         canonical: "/",
       }}
+      loader={true}
     >
 
       {/* Landing */}

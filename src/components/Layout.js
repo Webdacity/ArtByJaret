@@ -3,7 +3,6 @@ import React from "react";
 // Components
 import Head from "../components/Head";
 import Landing from "../components/Landing";
-// import PageLoader from "./PageLoader";
 
 const Layout = (props) => {
     return (
