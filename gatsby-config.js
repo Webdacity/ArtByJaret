@@ -6,7 +6,16 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-json`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [
+          `/shop/view`,
+          `/cart/success`,
+          `/collections/view`,
+        ],
+      }
+    },
     {
       resolve: `gatsby-plugin-layout`,
       options: {
