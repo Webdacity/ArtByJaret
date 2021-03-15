@@ -12,8 +12,8 @@ const Checkout = ({ shopSettings }) => {
     const payfastDetails = {
         merchant_id: "17327050",
         merchant_key: "4bt5yoiw68tvv",
-        url: `https://sandbox.payfast.co.za/eng/process`
-        // url: `https://www.payfast.co.za/eng/process`
+        // url: `https://sandbox.payfast.co.za/eng/process`
+        url: `https://www.payfast.co.za/eng/process`
     }
 
     const calcTotal = () => {
