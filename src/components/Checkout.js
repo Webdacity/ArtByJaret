@@ -10,8 +10,8 @@ const Checkout = ({ shopSettings }) => {
     const [order, setOrder] = useState();
 
     const payfastDetails = {
-        merchant_id: "10016549",
-        merchant_key: "sxou1f0t4mr2c",
+        merchant_id: "17327050",
+        merchant_key: "4bt5yoiw68tvv",
         url: `https://sandbox.payfast.co.za/eng/process`
         // url: `https://www.payfast.co.za/eng/process`
     }
