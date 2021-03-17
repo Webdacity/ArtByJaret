@@ -1,10 +1,20 @@
 @import "../global.scss";
 
 .grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
     column-gap: 2rem;
-    flex-wrap: wrap;
     row-gap: 4rem;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media (max-width: 991px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 576px) {
+        grid-template-columns: 1fr
+    }
 }

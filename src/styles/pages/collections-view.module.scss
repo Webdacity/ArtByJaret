@@ -60,7 +60,6 @@
         flex-direction: column;
         align-items: center;
         width: 40%;
-        row-gap: 1rem;
 
         h1 {
             font-size: 2rem;
@@ -82,6 +81,7 @@
             outline: none;
             border-bottom: 1px solid $grey;
             text-align: center;
+            margin-top: 1rem;
         }
 
         textarea {
@@ -95,6 +95,8 @@
             height: 5rem;
             resize: none;
             text-align: center;
+            margin-top: 1rem;
+
         }
     }
 

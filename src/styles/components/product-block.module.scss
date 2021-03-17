@@ -1,7 +1,6 @@
 @import "../global.scss";
 
 .product-block {
-    width: 22.5%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -78,16 +77,7 @@
         }
     }
 
-    @media (max-width: 991px) {
-        width: 30%;
-    }
-
-    @media (max-width: 768px) {
-        width: 45%;
-    }
-
     @media (max-width: 576px) {
-        width: 80%;
 
         .image {
             height: 35vh;
