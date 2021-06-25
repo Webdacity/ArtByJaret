@@ -35,9 +35,9 @@ const Header = () => {
                         <Link to="/collections" activeClassName={styles.activeLink}>
                             Collections
                         </Link>
-                        <Link to="/shop" activeClassName={styles.activeLink}>
+                        {/* <Link to="/shop" activeClassName={styles.activeLink}>
                             Shop
-                        </Link>
+                        </Link> */}
                         <Link to="/contact" activeClassName={styles.activeLink}>
                             Contact
                         </Link>
@@ -50,25 +50,25 @@ const Header = () => {
             <nav className={styles.mobileNavbar}>
                 <Link to="/" className={styles.logo}>
                     ArtByJaret
-                    </Link>
+                </Link>
                 <i className="material-icons" onClick={toggleNav}>menu</i>
                 <div className={styles.mobileLinks}>
                     <i className={`${styles.close} material-icons`} onClick={toggleNav}>close</i>
                     <Link to="/" activeClassName={styles.activeLink} onClick={toggleNav}>
                         Home
-                        </Link>
+                    </Link>
                     <Link to="/about" activeClassName={styles.activeLink} onClick={toggleNav}>
                         About
-                        </Link>
+                    </Link>
                     <Link to="/collections" activeClassName={styles.activeLink} onClick={toggleNav}>
                         Collections
-                        </Link>
-                    <Link to="/shop" activeClassName={styles.activeLink} onClick={toggleNav}>
+                    </Link>
+                    {/* <Link to="/shop" activeClassName={styles.activeLink} onClick={toggleNav}>
                         Shop
-                        </Link>
+                    </Link> */}
                     <Link to="/contact" activeClassName={styles.activeLink} onClick={toggleNav}>
                         Contact
-                        </Link>
+                    </Link>
                     <Link to="/cart" activeClassName={styles.activeLink} className={styles.cartLink} onClick={toggleNav}>
                         <span>cart</span><i className="icon-shopping-cart"></i>
                     </Link>

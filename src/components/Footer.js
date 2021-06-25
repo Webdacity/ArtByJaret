@@ -16,19 +16,19 @@ export default function Footer() {
                 <div className={styles.links}>
                     <Link to="/" className="">
                         Home
-                </Link>
+                    </Link>
                     <Link to="/about" className="">
                         About
-                </Link>
+                    </Link>
                     <Link to="/collections" className="">
                         Collections
-                </Link>
-                    <Link to="/shop" className="">
+                    </Link>
+                    {/* <Link to="/shop" className="">
                         Shop
-                </Link>
+                </Link> */}
                     <Link to="/contact" className="">
                         Contact
-                </Link>
+                    </Link>
                 </div>
                 <div className={styles.social}>
                     <a href="https://www.instagram.com/artbyjaret/" target="blank">

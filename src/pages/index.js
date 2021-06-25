@@ -73,7 +73,7 @@ export default function Home({ data }) {
       </Section>
 
       {/* Shop */}
-      <Section
+      {/* <Section
         heading="Shop"
         subHeading="Shop Jaret's original artworks, gifts and small-scale artwork."
         stroke="blue"
@@ -86,7 +86,7 @@ export default function Home({ data }) {
             </button>
           </div>
         </div>
-      </Section>
+      </Section> */}
 
       {/* Testimonials */}
       {/* <Section
